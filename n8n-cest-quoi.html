@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n, c'est quoi ? L'outil d'automatisation expliqué simplement</title>
+<meta name="description" content="n8n relie vos applications (Gmail, Excel, WhatsApp, votre banque) et automatise vos tâches répétitives. Explication simple, exemples, prix et avis pour les PME.">
+<link rel="stylesheet" href="style.css?v=38">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"n8n, c'est quoi ?","acceptedAnswer":{"@type":"Answer","text":"n8n est un outil open source qui relie vos applications entre elles (Gmail, Excel, WhatsApp, banque, logiciel de compta) et déclenche des actions automatiquement : quand un email arrive, une réponse part, un fichier se met à jour."}},
+{"@type":"Question","name":"Il faut savoir coder pour utiliser n8n ?","acceptedAnswer":{"@type":"Answer","text":"Non, la plupart des automatisations se construisent visuellement, en reliant des blocs. Un consultant s'en occupe pour vous : vous n'avez rien à toucher."}},
+{"@type":"Question","name":"n8n vs Zapier, c'est quoi la différence ?","acceptedAnswer":{"@type":"Answer","text":"Zapier facture par tâche exécutée, ce qui coûte cher dès que le volume augmente. n8n est open source et auto-hébergé : pas de coût par tâche, et vos données restent chez vous."}}
+]}
+</script>
+<link rel="canonical" href="https://jeremyh974.github.io/site-ia-pme/n8n-cest-quoi.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://jeremyh974.github.io/site-ia-pme/n8n-cest-quoi.html">
+<meta property="og:title" content="n8n, c'est quoi ? L'outil d'automatisation expliqué simplement">
+<meta property="og:description" content="n8n relie vos applications (Gmail, Excel, WhatsApp, votre banque) et automatise vos tâches répétitives. Explication simple, exemples, prix et avis pour les PME.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService",
+"name":"Jeremy : Consultant IA & Automatisation pour PME",
+"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
+"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
+"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+</script>
+<script>/* theme-init */
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(e){}}</script>
+</head>
+<body>
+
+<header class="site-header nav-v4"><!-- nav-v4 -->
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Jeremy<span>, Data Analyst · Automatisation &amp; IA</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="solutions-par-besoin.html">Solutions</a>
+      <a href="guides.html">Guides</a>
+      <a href="demos.html">Démos</a>
+      <a href="labo-demo.html">Labo</a>
+      
+      
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+      <a class="btn btn-primary nav-cta" href="contact.html">15 min offertes</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary>☰ Menu</summary>
+      <nav aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="detecteur-taches.html">🎯 Trouver mes tâches</a>
+        <a href="automatiser-devis.html">Devis &amp; factures</a>
+        <a href="relance-impayes.html">Relances &amp; impayés</a>
+        <a href="service-client.html">Service client &amp; avis</a>
+        <a href="compte-rendu-reunion.html">Comptes-rendus &amp; RDV</a>
+        <a href="index.html#solutions">Toutes les solutions →</a>
+        <a href="guides.html">Guides gratuits</a>
+        <a href="demos.html">Démos</a>
+        <a href="labo-demo.html">Labo</a>
+        
+        
+        <button class="theme-toggle theme-toggle-mobile" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+<a class="btn btn-primary" href="contact.html">15 min offertes</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › n8n, c'est quoi ? Le chef d'orchestre de vos outils.</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Pédagogie : 2 minutes chrono</span>
+    <h1>n8n, c'est quoi ? <em>Le chef d'orchestre de vos outils.</em></h1>
+    <p class="sub">n8n est l'outil que les consultants en automatisation utilisent pour relier vos applications entre elles. Explication simple, exemples concrets, et pourquoi les PME s'y intéressent.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#exemples">Voir des exemples</a>
+      <a class="btn btn-ghost" href="#prix">Combien ça coûte ?</a>
+    </div>
+  </div>
+</section>
+<div class="aio-box"><strong>En résumé :</strong> n8n est l'outil que les consultants en automatisation utilisent pour relier vos applications entre elles. Explication simple, exemples concrets, et pourquoi les PME s'y intéressent.</div>
+<style>.aio-box{background:#f4faf6;border:1px solid #cfe8d8;border-left:4px solid #1e7a4f;border-radius:8px;padding:14px 18px;margin:22px auto;max-width:1100px;font-size:16px;line-height:1.55;color:#222;box-shadow:0 1px 3px rgba(0,0,0,.05)}.aio-box strong{color:#1e7a4f}</style>
+
+<section id="definition">
+  <div class="wrap">
+    <span class="section-label">La définition simple</span>
+    <h2>n8n = le chef d'orchestre de vos outils</h2>
+    <div class="prose">
+      <p>n8n est un <strong>outil d'automatisation open source</strong>. Son rôle : <strong>relier vos applications entre elles</strong> et déclencher des actions automatiquement, sans intervention humaine.</p>
+      <p>Le principe est simple : <strong>quand X se produit, alors Y se fait.</strong> Quand un email arrive → l'IA le lit et le trie. Quand un client envoie un message WhatsApp → une réponse chiffrée part. Quand la semaine se termine → le reporting part dans votre boîte mail.</p>
+      <p>Vos outils ne communiquaient pas entre eux. n8n leur apprend à travailler ensemble : c'est pour ça que je le compare à un chef d'orchestre.</p>
+    </div>
+  </div>
+</section>
+
+<section id="exemples">
+  <div class="wrap">
+    <span class="section-label">Exemples concrets</span>
+    <h2>Ce que n8n automatise chez les PME</h2>
+    <div class="pains">
+      <div class="pain-row">
+        <div class="task">Demandes de devis<small>Email + WhatsApp</small></div>
+        <div class="before">Avant : réponse manuelle sous 2 jours</div>
+        <div class="after"><strong>Après : réponse chiffrée en 30 secondes, 24h/24</strong></div>
+      </div>
+      <div class="pain-row">
+        <div class="task">Emails et factures<small>Gmail + IA + Google Sheets</small></div>
+        <div class="before">Avant : tri manuel, saisie des montants</div>
+        <div class="after"><strong>Après : tri automatique, extraction des chiffres, alerte sur l'urgent</strong></div>
+      </div>
+      <div class="pain-row">
+        <div class="task">Reporting hebdomadaire<small>Données + IA + email</small></div>
+        <div class="before">Avant : 2 heures de copier-coller chaque semaine</div>
+        <div class="after"><strong>Après : rapport généré et envoyé tout seul, le lundi matin</strong></div>
+      </div>
+    </div>
+    <div class="page-nav">
+      <a href="agent-ia-cest-quoi.html">Agent IA, c'est quoi ?</a>
+      <a href="rapprochement-bancaire-excel.html">Automatiser le rapprochement bancaire</a>
+      <a href="automatiser-factures.html">Automatiser les factures</a>
+      <a href="index.html">← Retour à l'accueil</a>
+    </div>
+  </div>
+</section>
+
+<section id="prix">
+  <div class="wrap">
+    <span class="section-label">Le vrai avantage</span>
+    <h2>Pourquoi les PME choisissent n8n</h2>
+    <div class="prose">
+      <p><strong>1. Pas de coût par tâche.</strong> Les outils comme Zapier facturent chaque automatisation exécutée, ce qui devient vite cher. n8n est open source : on paie une fois, pour toujours.</p>
+      <p><strong>2. Vos données restent chez vous.</strong> L'outil tourne sur votre propre serveur. Vos emails, vos factures, vos chiffres ne passent pas par un tiers.</p>
+      <p><strong>3. Il parle avec l'IA.</strong> n8n intègre les modèles d'IA (ChatGPT, Claude, DeepSeek…) : l'automatisation ne se contente pas de déplacer des données, elle les comprend.</p>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="wrap">
+    <span class="section-label">L'avis honnête</span>
+    <h2>Ce que j'aime (et ce que je n'aime pas) chez n8n</h2>
+    <div class="pains">
+      <div class="pain-row">
+        <div class="task">Ce que j'aime ✅</div>
+        <div class="before">Gratuit et open source, puissant, auto-hébergé : vos données restent chez vous</div>
+        <div class="after"><strong>Le meilleur rapport puissance/prix du marché</strong> : c'est l'outil que je recommande aux PME</div>
+      </div>
+      <div class="pain-row">
+        <div class="task">Ce que je n'aime pas ⚠️</div>
+        <div class="before">La courbe d'apprentissage (ce n'est pas aussi simple que Zapier) et l'auto-hébergement demande de la maintenance</div>
+        <div class="after"><strong>D'où l'intérêt de passer par un professionnel</strong> : ou de la maintenance pour ceux qui s'y mettent seuls</div>
+      </div>
+    </div>
+    <div class="cta-inline">
+      <p><strong>Pas sûr de choisir ?</strong> L'audit gratuit tranche : vos besoins, le bon outil, le chiffrage.</p>
+      <a class="btn btn-primary" href="contact.html">Réserver mon audit gratuit</a>
+      <a class="btn btn-ghost" href="alternative-a-zapier.html">Voir le comparatif Zapier</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="section-label">Vos questions</span>
+    <h2>n8n, en pratique</h2>
+    <div class="faq">
+      <details>
+        <summary>« n8n, c'est gratuit ? »</summary>
+        <p>Oui : le logiciel est open source, donc <strong>gratuit</strong>. Il reste l'hébergement (quelques euros par mois sur un petit serveur) et, si vous passez par un consultant, le coût de la mission : bien inférieur à des années d'abonnement Zapier. Voir les tarifs.</p>
+      </details>
+      <details>
+        <summary>« Combien coûte un abonnement n8n ? »</summary>
+        <p>Il n'y a pas d'abonnement obligatoire : n8n Community est gratuit. La version cloud payante existe, mais l'auto-hébergement reste l'option la plus économique et la plus sûre (vos données restent chez vous).</p>
+      </details>
+      <details>
+        <summary>« Il faut savoir coder ? »</summary>
+        <p>Non, la plupart des automatisations se construisent visuellement, en reliant des blocs. Un consultant s'en occupe pour vous : vous n'avez rien à toucher.</p>
+      </details>
+      <details>
+        <summary>« n8n vs Zapier, c'est quoi la différence ? »</summary>
+        <p>Zapier facture par tâche exécutée, ce qui coûte cher dès que le volume augmente. n8n est open source et auto-hébergé : pas de coût par tâche, et vos données restent chez vous.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="section-label">Votre cas</span>
+    <h2>Une automatisation est possible chez vous.</h2>
+    <div class="cta-inline">
+      <p><strong>On identifie vos 2-3 tâches les plus chronophages et on chiffre le gain.</strong> Audit gratuit de 48h, sans engagement.</p>
+      <a class="btn btn-primary" href="mailto:contact@kaviten.com?subject=Je%20veux%20mon%20audit%20gratuit">Réserver mes 15 minutes offertes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-condensed footer-v2"><div class="wrap footer-grid">
+  <div class="footer-brand">
+    <p class="footer-logo">Jeremy, Data Analyst · Automatisation &amp; IA</p>
+    <p class="footer-tagline">Des automatisations testables en direct, sourcées, sans jargon.</p>
+    <a class="btn btn-primary" href="contact.html">📞 15 min offertes</a>
+  </div>
+  <nav class="footer-col" aria-label="Explorer">
+    <p class="footer-title">Explorer</p>
+    <a href="index.html">Accueil</a>
+    <a href="solutions-par-besoin.html">Solutions par besoin</a>
+    <a href="automatisations.html">Les 35 automatisations</a>
+    <a href="labo-demo.html">Labo (démos en direct)</a>
+  </nav>
+  <nav class="footer-col" aria-label="Ressources">
+    <p class="footer-title">Ressources</p>
+    <a href="guides.html">Guides</a>
+    <a href="formation-n8n.html">Formation n8n</a>
+    <a href="no-code-cest-quoi.html">No-code</a>
+    <a href="freelance-automatisation-n8n.html">Freelance n8n</a>
+    <a href="consultant-ia-pme.html">Consultant IA PME</a>
+    <a href="engagements-fiabilite.html">🛡️ Fiabilité</a>
+    <a href="l-ia-peut-elle-se-tromper.html">🤔 L'IA se trompe-t-elle ?</a>
+    <a href="a-propos.html">À propos</a>
+  </nav>
+  <nav class="footer-col" aria-label="Métiers">
+    <p class="footer-title">Métiers</p>
+    <a href="hub-artisans-btp.html">Artisans &amp; BTP</a>
+    <a href="hub-sante-bien-etre.html">Santé</a>
+    <a href="hub-tourisme-accueil.html">Tourisme</a>
+    <a href="hub-commerce-services.html">Commerce</a>
+    <a href="hub-transport-logistique.html">Transport</a>
+    <a href="hub-b2b-pro.html">B2B &amp; pro</a>
+  </nav>
+</div>
+<div class="wrap footer-bottom">
+  <span class="data-sources" style="font-size:11px;opacity:.7">Sources : <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a> · <a href="https://www.facturation.gouv.fr" target="_blank" rel="noopener">facturation.gouv.fr</a> · <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">EUR-Lex</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.insee.fr" target="_blank" rel="noopener">INSEE</a> · <a href="https://ec.europa.eu/taxation_customs/vies/" target="_blank" rel="noopener">VIES</a></span>
+  <p style="margin:4px 0 0;font-size:12px;opacity:.8">© 2026 Jeremy : Data Analyst · Automatisation &amp; IA · <a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</div></footer>
+<a href="https://wa.me/33600000000?text=Bonjour%2C%20je%20voudrais%20mes%2015%20minutes%20offertes" class="wa-float" aria-label="Me contacter sur WhatsApp">💬</a>
+<style>.wa-float{position:fixed;right:16px;bottom:16px;background:#1e7a4f;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:999;text-decoration:none}@media(min-width:900px){.wa-float{display:none}}</style>
+<script>/* nav-close-js */document.addEventListener("click",function(e){var open=document.querySelectorAll("details[open]");open.forEach(function(d){if(!d.contains(e.target)&&(d.classList.contains("nav-mobile")||d.classList.contains("nav-drop"))){d.removeAttribute("open");}});});</script>
+<script src="besoin-widget.js"></script>
+</body>
+</html>

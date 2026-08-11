@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouvez vos tâches à automatiser : détecteur gratuit (2 minutes)</title>
+<meta name="description" content="Cochez ce que vous faites à la main, indiquez votre temps : le détecteur calcule vos tâches les plus rentables à automatiser et ce que ça vaut en euros.">
+<link rel="stylesheet" href="style.css?v=38">
+<style>
+.det-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);margin-top:26px;max-width:760px}
+.step{display:none}
+.step.active{display:block}
+.step-label{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+.step h3{font-size:22px;margin-bottom:18px}
+.profile-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:640px){.profile-options{grid-template-columns:1fr}}
+.profile-btn{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:left;cursor:pointer;font-family:var(--font-body);font-size:15px;font-weight:600;color:inherit}[data-theme="dark"] .profil-select{background:#1c221f;border-color:#2a332e;color:#e8ece8}[data-theme="dark"] .profile-btn:hover{background:#1c2a22}[data-theme="dark"] .profile-btn.selected{background:#1c2a22}
+.profile-btn small{display:block;font-weight:400;color:var(--ink-soft);margin-top:4px;font-size:13px}
+.profile-btn:hover,.profile-btn.selected{border-color:var(--accent);background:#e3efe8}
+.task-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:640px){.task-list{grid-template-columns:1fr}}
+.task-opt{display:flex;align-items:flex-start;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14px}
+.task-opt:hover{border-color:var(--accent)}
+.task-opt input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex-shrink:0}
+.slider-block{margin-bottom:20px}
+.slider-block label{display:flex;justify-content:space-between;font-size:15px;font-weight:600;margin-bottom:8px}
+.slider-block output{color:var(--amber);font-weight:700}
+.det-nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap}
+.result-box{background:var(--ink);color:var(--paper);border-radius:14px;padding:26px;margin-top:20px}
+.result-box .big{font-family:var(--font-display);font-size:38px;font-weight:700;color:#7dd3a8;line-height:1.1}
+.result-box .big small{font-size:18px}
+.result-list{margin-top:18px}
+.result-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;flex-wrap:wrap}
+.result-item a{color:#7dd3a8;font-weight:600;text-decoration:none}
+.result-item .h{font-size:13px;color:rgba(250,247,241,.7);white-space:nowrap}
+.result-note{font-size:13px;color:rgba(250,247,241,.6);margin-top:14px}
+</style>
+<link rel="canonical" href="https://jeremyh974.github.io/site-ia-pme/detecteur-taches.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://jeremyh974.github.io/site-ia-pme/detecteur-taches.html">
+<meta property="og:title" content="Trouvez vos tâches à automatiser : détecteur gratuit (2 minutes)">
+<meta property="og:description" content="Cochez ce que vous faites à la main, indiquez votre temps : le détecteur calcule vos tâches les plus rentables à automatiser et ce que ça vaut en euros.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService",
+"name":"Jeremy : Consultant IA & Automatisation pour PME",
+"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
+"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
+"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+</script>
+<script>/* theme-init */
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(e){}}</script>
+</head>
+<body>
+
+<header class="site-header nav-v4"><!-- nav-v4 -->
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Jeremy<span>, Data Analyst · Automatisation &amp; IA</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="solutions-par-besoin.html">Solutions</a>
+      <a href="guides.html">Guides</a>
+      <a href="demos.html">Démos</a>
+      <a href="labo-demo.html">Labo</a>
+      
+      
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+      <a class="btn btn-primary nav-cta" href="contact.html">15 min offertes</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary>☰ Menu</summary>
+      <nav aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="detecteur-taches.html">🎯 Trouver mes tâches</a>
+        <a href="automatiser-devis.html">Devis &amp; factures</a>
+        <a href="relance-impayes.html">Relances &amp; impayés</a>
+        <a href="service-client.html">Service client &amp; avis</a>
+        <a href="compte-rendu-reunion.html">Comptes-rendus &amp; RDV</a>
+        <a href="index.html#solutions">Toutes les solutions →</a>
+        <a href="guides.html">Guides gratuits</a>
+        <a href="demos.html">Démos</a>
+        <a href="labo-demo.html">Labo</a>
+        
+        
+        <button class="theme-toggle theme-toggle-mobile" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+<a class="btn btn-primary" href="contact.html">15 min offertes</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Trouvez vos tâches à automatiser, en 2 minutes.</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Outil gratuit · 2 minutes · Zéro technique</span>
+    <h1>Trouvez vos tâches à automatiser, <em>en 2 minutes.</em></h1>
+    <p class="sub">Cochez ce que vous faites à la main, indiquez votre temps : le détecteur vous dit quelles tâches automatiser en premier et combien ça vaut. Sans jargon, sans engagement.</p>
+  </div>
+</section>
+<div class="aio-box"><strong>En résumé :</strong> Cochez ce que vous faites à la main, indiquez votre temps : le détecteur vous dit quelles tâches automatiser en premier et combien ça vaut. Sans jargon, sans engagement.</div>
+<style>.aio-box{background:#f4faf6;border:1px solid #cfe8d8;border-left:4px solid #1e7a4f;border-radius:8px;padding:14px 18px;margin:22px auto;max-width:1100px;font-size:16px;line-height:1.55;color:#222;box-shadow:0 1px 3px rgba(0,0,0,.05)}.aio-box strong{color:#1e7a4f}</style>
+
+<section>
+  <div class="wrap">
+    <div class="det-card" id="det">
+      <!-- Étape 1 : profil -->
+      <div class="step active" data-step="1">
+        <div class="step-label">Étape 1 / 3</div>
+        <h3>Quel est votre profil ?</h3>
+        <div class="profile-options">
+  <select id="profil-select" class="profil-select" style="width:100%;padding:14px 16px;border:1px solid var(--line,#e5e7eb);border-radius:12px;font-size:15px;background:var(--paper,#fff);color:inherit">
+<option value="">— Choisissez votre profil —</option>
+<option value="artisan">🧱 Artisan / commerce : Peinture, BTP, coiffure, auto-école…</option>
+<option value="service">💼 Service / profession libérale : Santé, conseil, coaching, expertise…</option>
+<option value="pme">🏢 PME avec employés : 5 à 30 personnes, plusieurs services</option>
+<option value="ecom">🛒 E-commerce / vente en ligne : Boutique en ligne, marketplace, dropshipping</option>
+<option value="garage">🔧 Garage / atelier auto : Mécanique, carrosserie, entretien</option>
+<option value="resto">🍽️ Restaurant / traiteur : Service, cuisine, événements</option>
+<option value="sante">🩺 Cabinet médical / paramédical : Kiné, dentiste, ostéo, médecin</option>
+<option value="coiffure">💇 Coiffure / beauté : Salon, barber, institut</option>
+<option value="transport">🚚 Transport / livraison : Tournées, déménagement, logistique</option>
+<option value="autoecole">🚗 Auto-école : Leçons, code, examens</option>
+<option value="sport">🏋️ Salle de sport : Coaching, cours, abonnements</option>
+<option value="pharma">💊 Pharmacie / officine : Comptoir, commandes, stocks</option>
+<option value="hotel">🏨 Hôtel / gîte : Réservations, avis, ménage</option>
+<option value="pressing">👔 Pressing : Suivi articles, retraits</option>
+<option value="electricien">⚡ Électricien : Devis, chantiers, attestations</option>
+<option value="veterinaire">🐾 Vétérinaire : Vaccins, RDV, suivi</option>
+<option value="foodtruck">🚐 Food truck : Commandes, tournées, caisse</option>
+<option value="menuisier">🪚 Menuisier / atelier : Devis, planning, commandes</option>
+<option value="camping">🏕️ Camping / vacances : Réservations, arrivées, avis</option>
+<option value="paysagiste">🌿 Paysagiste : Devis, chantiers, contrats</option>
+<option value="locsaison">🏠 Location saisonnière : Réservations, avis, arrivées</option>
+<option value="evenementiel">🎪 Événementiel : Devis, prestataires, invités</option>
+<option value="vtc">🚕 VTC / taxi : Facturation, rappels, gains</option>
+<option value="architecte">📐 Architecte : Devis, CR chantier, dossiers</option>
+<option value="servicesb2b">💼 Cabinet conseil / agence : Devis, reporting, suivi missions</option>
+<option value="formation">🎓 Organisme de formation : Inscriptions, convocations, bilans</option>
+<option value="tresorerie">🏦 Trésorerie / finance : Rapprochement, prévisionnel, alertes</option>
+<option value="syndic">🏢 Syndic de copropriété : Charges, relances, assemblées</option>
+<option value="conciergerie">🔑 Conciergerie : Messages, avis, réservations</option>
+<option value="creche">🧸 Crèche / micro-crèche : Inscriptions, présences, facturation</option>
+<option value="ecole">🏫 École privée : Inscriptions, réunions, frais</option>
+<option value="locative">🗝️ Gestion locative : Quittances, loyers, états des lieux</option>
+<option value="spa">💆 Spa / institut : RDV, fidélité, avis</option>
+<option value="avocat">⚖️ Avocat : Relances, CR, honoraires</option>
+<option value="coach">🏋️ Coach sportif : Séances, abonnements, avis</option>
+<option value="bar">🍺 Bar / café : Caisse, fournisseurs, événements</option>
+<option value="voyage">✈️ Agence de voyage : Devis, rappels, avis</option>
+<option value="dentiste">🦷 Dentiste : Contrôles, RDV, liste d'attente</option>
+<option value="boulangerie">🥖 Boulangerie : Fournisseurs, stocks, avis</option>
+<option value="librairie">📚 Librairie : Commandes, événements, avis</option>
+<option value="psychologue">🧠 Psychologue : RDV, rappels, suivi</option>
+<option value="sap">🤝 Aide à domicile : Planning, CESU, rappels</option>
+  </select>
+  <p style="font-size:13px;opacity:.75;margin:8px 0 0">1 clic, et on passe aux tâches. 🔽</p>
+</div>
+      </div>
+
+      <!-- Étape 2 : tâches -->
+      <div class="step" data-step="2">
+        <div class="step-label">Étape 2 / 3</div>
+        <h3>Cochez ce que vous faites à la main</h3>
+        <p style="color:var(--ink-soft);font-size:14px;margin-bottom:14px">Ne réfléchissez pas trop : cochez ce qui vous ressemble, même partiellement.</p>
+        <div class="task-list" id="taskList"></div>
+        <div class="det-nav">
+          <button class="btn btn-ghost" id="back1">← Retour</button>
+          <button class="btn btn-primary" id="next2" disabled>Voir mes gains →</button>
+        </div>
+      </div>
+
+      <!-- Étape 3 : temps -->
+      <div class="step" data-step="3">
+        <div class="step-label">Étape 3 / 3</div>
+        <h3>Combien ça vous prend, en tout ?</h3>
+        <div class="slider-block">
+          <label>Temps total sur ces tâches, chaque semaine <output id="tOut">5 h</output></label>
+          <input type="range" id="timeRange" min="1" max="20" value="5" step="1">
+        </div>
+        <div class="slider-block">
+          <label>Valeur d'une heure de votre temps (ou de celle d'un employé) <output id="vOut">50 €</output></label>
+          <input type="range" id="valRange" min="20" max="150" value="50" step="5">
+        </div>
+        <div class="det-nav">
+          <button class="btn btn-ghost" id="back2">← Retour</button>
+          <button class="btn btn-primary" id="compute">Calculer mes gains</button>
+        </div>
+      </div>
+
+      <!-- Résultat -->
+      <div class="step" data-step="result">
+        <div class="step-label">Votre résultat</div>
+        <h3>Voici vos gains potentiels</h3>
+        <div class="result-box" id="resultBox"></div>
+        <div style="background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-top:14px">
+          <label style="font-weight:600;font-size:14px;display:block;margin-bottom:6px">📩 Recevez votre plan d'action + le Pack PME (modèles prêts à copier)</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input type="email" id="leadEmail" placeholder="votre@email.fr" style="flex:1;min-width:200px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px">
+            <button class="btn btn-primary" id="sendResult" style="padding:10px 18px">Recevoir</button>
+          </div>
+          <p id="leadMsg" style="font-size:13px;color:var(--ink-soft);margin-top:8px"></p>
+        </div>
+        <div class="det-nav">
+          <button class="btn btn-ghost" id="restart">↺ Recommencer</button>
+          <a class="btn btn-primary" href="contact.html">En parler 15 minutes (gratuit)</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:18px;font-size:14px;color:var(--ink-soft)">Estimations indicatives : l'automatisation rend en moyenne <strong>80 % du temps</strong> d'une tâche répétitive. Le chiffrage précis se fait pendant l'audit gratuit.</p>
+  </div>
+</section>
+
+<footer class="footer-condensed footer-v2"><div class="wrap footer-grid">
+  <div class="footer-brand">
+    <p class="footer-logo">Jeremy, Data Analyst · Automatisation &amp; IA</p>
+    <p class="footer-tagline">Des automatisations testables en direct, sourcées, sans jargon.</p>
+    <a class="btn btn-primary" href="contact.html">📞 15 min offertes</a>
+  </div>
+  <nav class="footer-col" aria-label="Explorer">
+    <p class="footer-title">Explorer</p>
+    <a href="index.html">Accueil</a>
+    <a href="solutions-par-besoin.html">Solutions par besoin</a>
+    <a href="automatisations.html">Les 35 automatisations</a>
+    <a href="labo-demo.html">Labo (démos en direct)</a>
+  </nav>
+  <nav class="footer-col" aria-label="Ressources">
+    <p class="footer-title">Ressources</p>
+    <a href="guides.html">Guides</a>
+    <a href="formation-n8n.html">Formation n8n</a>
+    <a href="no-code-cest-quoi.html">No-code</a>
+    <a href="freelance-automatisation-n8n.html">Freelance n8n</a>
+    <a href="consultant-ia-pme.html">Consultant IA PME</a>
+    <a href="engagements-fiabilite.html">🛡️ Fiabilité</a>
+    <a href="l-ia-peut-elle-se-tromper.html">🤔 L'IA se trompe-t-elle ?</a>
+    <a href="a-propos.html">À propos</a>
+  </nav>
+  <nav class="footer-col" aria-label="Métiers">
+    <p class="footer-title">Métiers</p>
+    <a href="hub-artisans-btp.html">Artisans &amp; BTP</a>
+    <a href="hub-sante-bien-etre.html">Santé</a>
+    <a href="hub-tourisme-accueil.html">Tourisme</a>
+    <a href="hub-commerce-services.html">Commerce</a>
+    <a href="hub-transport-logistique.html">Transport</a>
+    <a href="hub-b2b-pro.html">B2B &amp; pro</a>
+  </nav>
+</div>
+<div class="wrap footer-bottom">
+  <span class="data-sources" style="font-size:11px;opacity:.7">Sources : <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a> · <a href="https://www.facturation.gouv.fr" target="_blank" rel="noopener">facturation.gouv.fr</a> · <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">EUR-Lex</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.insee.fr" target="_blank" rel="noopener">INSEE</a> · <a href="https://ec.europa.eu/taxation_customs/vies/" target="_blank" rel="noopener">VIES</a></span>
+  <p style="margin:4px 0 0;font-size:12px;opacity:.8">© 2026 Jeremy : Data Analyst · Automatisation &amp; IA · <a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</div><span><a href="readiness-matrix.html" style="display:none">matrice</a></span></footer>
+
+<script>
+(function(){
+  var TASKS = [
+    {id:"stock", t:"Je mets à jour mes stocks / mon inventaire à la main", w:2, page:"gestion-stock-automatique.html", label:"Automatiser le stock"},
+    {id:"saisie", t:"Je saisis des factures ou des montants à la main", w:3, page:"automatiser-factures.html", label:"Automatiser les factures"},
+    {id:"emails", t:"Je trie mes emails un par un", w:2, page:"automatiser-factures.html", label:"Automatiser les factures"},
+    {id:"impayes", t:"Je relance les impayés de mémoire", w:2, page:"relance-impayes.html", label:"Relancer les impayés"},
+    {id:"devis", t:"Je prépare des devis à la main", w:3, page:"automatiser-devis.html", label:"Automatiser les devis"},
+    {id:"questions", t:"Je réponds aux mêmes questions clients", w:2, page:"chatbot-whatsapp.html", label:"Chatbot WhatsApp"},
+    {id:"reporting", t:"Je refais mon reporting / mes tableaux chaque semaine", w:2, page:"automatiser-excel.html", label:"Automatiser Excel"},
+    {id:"rapprochement", t:"Je vérifie le relevé bancaire contre mes factures", w:2, page:"rapprochement-bancaire-excel.html", label:"Rapprochement bancaire"},
+    {id:"crs", t:"Je rédige des comptes-rendus de réunion", w:2, page:"compte-rendu-reunion.html", label:"Compte-rendu de réunion"},
+    {id:"rdv", t:"Je rappelle les clients pour confirmer leurs rendez-vous", w:2, page:"prise-rendez-vous.html", label:"Rappels de RDV"},
+    {id:"avis", t:"Je réponds aux avis Google", w:1, page:"repondre-avis-google.html", label:"Répondre aux avis"},
+    {id:"consolidation", t:"Je consolide plusieurs fichiers Excel", w:1, page:"automatiser-excel.html", label:"Automatiser Excel"},
+    {id:"recopie", t:"Je recopie des infos d'un document vers un autre", w:2, page:"agent-ia-cest-quoi.html", label:"Agent IA"},
+    {id:"felec", t:"Je dois me préparer à la facturation électronique", w:1, page:"facturation-electronique-2026.html", label:"Facturation électronique"},
+    {id:"paiements", t:"Je surveille les paiements et les retards", w:1, page:"relance-impayes.html", label:"Relancer les impayés"},
+    {id:"emailshebdo", t:"J'envoie les mêmes emails chaque semaine", w:1, page:"automatiser-factures.html", label:"Automatiser les factures"},
+    {id:"recherche", t:"Je cherche des infos dans mes documents", w:1, page:"agent-ia-cest-quoi.html", label:"Agent IA"},
+    {id:"appels", t:"Je note des infos pendant les appels clients", w:1, page:"compte-rendu-reunion.html", label:"Compte-rendu de réunion"},
+    {id:"suivi", t:"Je mets à jour des tableaux de suivi", w:1, page:"automatiser-excel.html", label:"Automatiser Excel"}
+  ];
+  var PROFILE_BOOST = {
+    "artisan":  {devis:1.2, saisie:1.1, rdv:1.2, impayes:1.1},
+    "service":  {rdv:1.3, crs:1.2, questions:1.1, avis:1.2},
+    "pme":      {reporting:1.3, rapprochement:1.2, impayes:1.1, emails:1.1},
+    "ecom":     {questions:1.2, devis:1.1, emails:1.2, saisie:1.1},
+    "garage":   {rdv:1.2, devis:1.3, impayes:1.2, avis:1.2, paiements:1.1},
+    "resto":    {rdv:1.2, stock:1.3, saisie:1.2, avis:1.2, appels:1.1},
+    "sante":    {rdv:1.3, crs:1.3, appels:1.2, avis:1.1, impayes:1.1},
+    "coiffure": {rdv:1.3, avis:1.3, appels:1.2, stock:1.1, devis:1.1},
+    "transport":{saisie:1.3, impayes:1.2, emails:1.1, paiements:1.2, suivi:1.2},
+    "autoecole": {rdv:1.3, devis:1.2, emails:1.2, impayes:1.1, avis:1.1},
+    "sport":     {rdv:1.3, impayes:1.2, avis:1.2, emails:1.1, appels:1.1},
+    "pharma":    {appels:1.3, stock:1.2, saisie:1.2, questions:1.2, rapprochement:1.1},
+    "hotel":     {rdv:1.2, avis:1.3, appels:1.2, devis:1.1, impayes:1.1},
+    "pressing":  {suivi:1.3, avis:1.2, appels:1.2, saisie:1.1, impayes:1.1},
+    "electricien":{devis:1.3, rdv:1.2, impayes:1.1, suivi:1.2, avis:1.1},
+    "veterinaire":{rdv:1.3, avis:1.2, appels:1.2, crs:1.1, impayes:1.1},
+    "foodtruck": {appels:1.2, stock:1.2, avis:1.2, saisie:1.2, devis:1.1},
+    "menuisier": {devis:1.3, rdv:1.2, impayes:1.1, suivi:1.2, avis:1.1},
+    "camping":   {rdv:1.2, avis:1.3, appels:1.2, devis:1.1, impayes:1.1},
+    "paysagiste":{devis:1.3, rdv:1.2, impayes:1.1, avis:1.1, emails:1.1},
+    "locsaison": {appels:1.2, avis:1.3, emails:1.2, saisie:1.1, impayes:1.1},
+    "evenementiel":{devis:1.3, rdv:1.2, emails:1.2, impayes:1.1, avis:1.1},
+    "vtc":       {saisie:1.3, impayes:1.2, appels:1.2, emails:1.1, avis:1.1},
+    "architecte": {devis:1.3, crs:1.3, rdv:1.2, impayes:1.1, avis:1.1},
+    "servicesb2b":{devis:1.3, crs:1.2, emails:1.2, impayes:1.1, reporting:1.2},
+    "formation":  {rdv:1.2, emails:1.3, impayes:1.1, avis:1.1, stock:1.1},
+    "tresorerie": {rapprochement:1.3, impayes:1.2, emails:1.1, saisie:1.2, reporting:1.2},
+    "syndic":     {impayes:1.3, crs:1.2, emails:1.2, rapprochement:1.1, appels:1.2},
+    "conciergerie":{appels:1.2, avis:1.3, emails:1.2, devis:1.1, impayes:1.1},
+    "creche":     {saisie:1.3, emails:1.2, impayes:1.1, appels:1.1, avis:1.1},
+    "ecole":      {saisie:1.3, emails:1.2, impayes:1.1, appels:1.1, avis:1.1},
+    "locative":   {saisie:1.3, impayes:1.2, emails:1.1, avis:1.1, reporting:1.1},
+    "spa":        {rdv:1.3, avis:1.2, appels:1.2, stock:1.1, devis:1.1},
+    "avocat":     {impayes:1.2, crs:1.3, emails:1.2, rdv:1.2, saisie:1.1},
+    "coach":      {rdv:1.3, impayes:1.2, avis:1.2, emails:1.1, appels:1.1},
+    "bar":        {rapprochement:1.2, stock:1.2, avis:1.2, saisie:1.2, appels:1.1},
+    "voyage":     {devis:1.3, rdv:1.2, avis:1.2, emails:1.2, impayes:1.1},
+    "dentiste":   {rdv:1.3, avis:1.2, appels:1.2, crs:1.1, impayes:1.1},
+    "boulangerie":{stock:1.3, saisie:1.2, avis:1.2, appels:1.1, devis:1.1},
+    "librairie":  {stock:1.2, saisie:1.2, avis:1.2, emails:1.2, appels:1.1},
+    "psychologue":{rdv:1.3, appels:1.1, impayes:1.1, emails:1.1, avis:1.1},
+    "sap":        {saisie:1.3, rdv:1.2, impayes:1.1, emails:1.1, appels:1.2}
+  };
+
+  var profile = null, selected = {};
+  var $ = function(id){ return document.getElementById(id); };
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+
+  function go(step){
+    steps.forEach(function(s){ s.classList.remove('active'); });
+    document.querySelector('.step[data-step="'+step+'"]').classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  var selProfil = document.getElementById('profil-select');
+  if (selProfil) selProfil.addEventListener('change', function(){
+    if (!selProfil.value) return;
+    profile = selProfil.value;
+    renderTasks();
+    go(2);
+  });
+
+  function renderTasks(){
+    var list = $('taskList');
+    list.innerHTML = '';
+    TASKS.forEach(function(t){
+      var label = document.createElement('label');
+      label.className = 'task-opt';
+      label.innerHTML = '<input type="checkbox" value="'+t.id+'"> <span>'+t.t+'</span>';
+      var cb = label.querySelector('input');
+      cb.checked = !!selected[t.id];
+      cb.addEventListener('change', function(){
+        if (cb.checked) selected[t.id] = true; else delete selected[t.id];
+        $('next2').disabled = Object.keys(selected).length === 0;
+      });
+      list.appendChild(label);
+    });
+    $('next2').disabled = Object.keys(selected).length === 0;
+  }
+
+  $('back1').addEventListener('click', function(){ go(1); });
+  $('next2').addEventListener('click', function(){ go(3); });
+  $('back2').addEventListener('click', function(){ go(2); });
+
+  var tr = $('timeRange'), vr = $('valRange');
+  tr.addEventListener('input', function(){ $('tOut').textContent = tr.value + ' h'; });
+  vr.addEventListener('input', function(){ $('vOut').textContent = vr.value + ' €'; });
+
+  $('compute').addEventListener('click', function(){
+    var totalH = +tr.value, val = +vr.value;
+    var checked = TASKS.filter(function(t){ return selected[t.id]; });
+    var weights = checked.map(function(t){
+      var w = t.w;
+      if (profile && PROFILE_BOOST[profile] && PROFILE_BOOST[profile][t.id]) w *= PROFILE_BOOST[profile][t.id];
+      return {task: t, w: w};
+    });
+    var sumW = weights.reduce(function(a, x){ return a + x.w; }, 0);
+    weights.sort(function(a, b){ return b.w - a.w; });
+
+    var saved = Math.round(totalH * 0.8);
+    var gain = saved * val * 46;
+    window._detResult = { top: weights.slice(0,3).map(function(x){ return x.task.t; }), gain: gain.toLocaleString('fr-FR'), saved: saved };
+    var box = $('resultBox');
+    var top3 = weights.slice(0, 3).map(function(x){
+      var h = Math.round(totalH * x.w / sumW);
+      return '<div class="result-item"><span>🥇&nbsp;'+x.task.t+'</span> <span class="h">≈ '+h+' h/sem</span> <a href="'+x.task.page+'">voir →</a></div>';
+    }).join('');
+    box.innerHTML = '<div class="big"><span>'+gain.toLocaleString('fr-FR')+'</span> <small>€ / an</small></div>'
+      + '<p style="margin-top:6px">≈ <strong>'+saved+' h libérées</strong> chaque semaine · '+Object.keys(selected).length+' tâches automatisables détectées</p>'
+      + '<div class="result-list">'+top3+'</div>'
+      + '<div class="result-note">Les liens vous expliquent chaque automatisation simplement. Pour un chiffrage précis avec vos données : l\'audit gratuit.</div>';
+    go('result');
+  });
+
+  $('sendResult').addEventListener('click', function(){
+    var email = $('leadEmail').value.trim();
+    var msg = $('leadMsg');
+    if (!email || email.indexOf('@') < 0) { msg.textContent = 'Indiquez votre email pour recevoir le résultat.'; return; }
+    var r = window._detResult || { top: [], gain: '0', saved: 0 };
+    var summary = 'Résultat détecteur : ≈ ' + r.saved + ' h/sem libérées, ' + r.gain + ' €/an. Top tâches : ' + r.top.join(' | ');
+    fetch('https://quantitative-infinite-rand-collecting.trycloudflare.com/webhook/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nom: 'Visiteur détecteur', entreprise: '', email: email, pain: 'Détecteur de tâches', message: summary })
+    }).then(function(res){ return res.json(); }).then(function(res){
+      if (res.ok) { msg.innerHTML = '<strong style="color:var(--accent)">✅ Résultat envoyé : vérifiez votre boîte mail (pensez aux spams).</strong>'; }
+      else { mailtoResult(email, summary); }
+    }).catch(function(){ mailtoResult(email, summary); });
+  });
+  function mailtoResult(email, summary){
+    window.location.href = 'mailto:contact@kaviten.com?subject=' + encodeURIComponent('Résultat détecteur') + '&body=' + encodeURIComponent('Bonjour Jeremy, merci de m\'envoyer mon résultat :\n\n' + summary + '\n\nEmail : ' + email);
+  }
+
+  $('restart').addEventListener('click', function(){
+    profile = null; selected = {};
+    document.querySelectorAll('.profile-btn').forEach(function(x){ x.classList.remove('selected'); });
+    tr.value = 5; vr.value = 50; $('tOut').textContent = '5 h'; $('vOut').textContent = '50 €';
+    renderTasks();
+    go(1);
+  });
+})();
+</script>
+<a href="https://wa.me/33600000000?text=Bonjour%2C%20je%20voudrais%20mes%2015%20minutes%20offertes" class="wa-float" aria-label="Me contacter sur WhatsApp">💬</a>
+<style>.wa-float{position:fixed;right:16px;bottom:16px;background:#1e7a4f;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:999;text-decoration:none}@media(min-width:900px){.wa-float{display:none}}</style>
+<script>/* nav-close-js */document.addEventListener("click",function(e){var open=document.querySelectorAll("details[open]");open.forEach(function(d){if(!d.contains(e.target)&&(d.classList.contains("nav-mobile")||d.classList.contains("nav-drop"))){d.removeAttribute("open");}});});</script>
+<script src="besoin-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Votre matrice IA : quels processus automatiser, lesquels garder humains</title>
+<meta name="description" content="Répondez sur vos processus, le score calcule : DEPLOY (prêt), PILOT (à tester), ASSIST (l'IA aide), HOLD (reste humain). Les automatisations recommandées, testables en direct.">
+<link rel="stylesheet" href="style.css?v=38">
+</head><body>
+<header class="site-header nav-v4"><div class="wrap header-inner">
+<a class="brand" href="index.html">Jeremy<span>, Data Analyst · Automatisation &amp; IA</span></a>
+<nav class="main-nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a><a href="solutions-par-besoin.html">Solutions</a><a href="guides.html">Guides</a><a href="demos.html">Démos</a><a href="labo-demo.html">Labo</a>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+<a class="btn btn-primary nav-cta" href="contact.html">15 min offertes</a>
+</nav>
+<details class="nav-mobile"><summary>☰ Menu</summary><nav aria-label="Navigation mobile">
+<a href="index.html">Accueil</a><a href="detecteur-taches.html">🎯 Trouver mes tâches</a><a href="guides.html">Guides gratuits</a><a href="demos.html">Démos</a><a href="labo-demo.html">Labo</a><a class="btn btn-primary" href="contact.html">15 min offertes</a>
+</nav></details>
+</div></header>
+
+<main class="wrap">
+  <div style="padding:22px 0 10px;text-align:center">
+    <p style="margin:0 0 6px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#3fae78)">2 minutes, un score par processus</p>
+    <h1 style="font-size:clamp(24px,4vw,38px);line-height:1.15;margin:0 0 10px">Votre matrice IA : ce qui est prêt, ce qui reste humain</h1>
+    <p style="font-size:16px;opacity:.9;max-width:640px;margin:0 auto">Cochez vos processus, répondez à 3 questions par processus. Le calcul est transparent : les scores viennent de critères précis, pas d'une estimation au doigt mouillé.</p>
+  </div>
+
+  <div id="step1" style="margin:22px 0">
+    <h2 style="font-size:20px">1. Quels processus occupent votre équipe ?</h2>
+    <p style="font-size:14px;opacity:.8">Cochez tout ce qui vous concerne, même un peu.</p>
+    <div id="proc-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px"></div>
+  </div>
+
+  <div id="step2" style="display:none;margin:22px 0">
+    <h2 style="font-size:20px">2. Trois questions par processus</h2>
+    <p style="font-size:14px;opacity:.8">Soyez honnête, le score en dépend.</p>
+    <div id="q-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px"></div>
+    <p style="margin-top:16px"><button class="btn btn-primary" onclick="calcMatrix()">Calculer ma matrice</button></p>
+  </div>
+
+  <div id="result" style="display:none;margin:22px 0">
+    <h2 style="font-size:20px">Votre matrice</h2>
+    <p style="font-size:14px;opacity:.9" id="resume-matrix"></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px" id="matrix-box"></div>
+    <div style="margin-top:16px;padding:16px;background:var(--paper-2,#f3f4f6);border:1px solid var(--line,#e5e7eb);border-radius:12px">
+      <h3 style="margin:0 0 6px;font-size:16px">Ce que ça veut dire</h3>
+      <p style="font-size:14px;margin:0">DEPLOY : prêt à automatiser, le gain est net. PILOT : on teste sur un périmètre restreint. ASSIST : l'IA prépare, l'humain valide. HOLD : trop de risque ou trop humain pour le moment. La décision finale reste la vôtre.</p>
+    </div>
+    <p style="margin-top:16px;text-align:center"><a class="btn btn-primary" href="contact.html">📞 15 min pour prioriser ensemble</a></p>
+  </div>
+</main>
+
+<footer class="footer-condensed footer-v2"><div class="wrap footer-grid">
+  <div class="footer-brand"><p class="footer-logo">Jeremy, Data Analyst · Automatisation &amp; IA</p>
+    <p class="footer-tagline">Des automatisations testables en direct, sourcées, sans jargon.</p>
+    <a class="btn btn-primary" href="contact.html">📞 15 min offertes</a></div>
+  <nav class="footer-col" aria-label="Explorer"><p class="footer-title">Explorer</p>
+    <a href="index.html">Accueil</a><a href="solutions-par-besoin.html">Solutions par besoin</a><a href="automatisations.html">Les 35 automatisations</a><a href="labo-demo.html">Labo (démos en direct)</a></nav>
+  <nav class="footer-col" aria-label="Ressources"><p class="footer-title">Ressources</p>
+    <a href="guides.html">Guides</a><a href="formation-n8n.html">Formation n8n</a><a href="engagements-fiabilite.html">🛡️ Fiabilité</a><a href="a-propos.html">À propos</a></nav>
+  <nav class="footer-col" aria-label="Métiers"><p class="footer-title">Métiers</p>
+    <a href="hub-artisans-btp.html">Artisans &amp; BTP</a><a href="hub-sante-bien-etre.html">Santé</a><a href="hub-tourisme-accueil.html">Tourisme</a><a href="hub-b2b-pro.html">B2B &amp; pro</a></nav>
+</div>
+<div class="wrap footer-bottom">
+  <span class="data-sources" style="font-size:11px;opacity:.7">Sources : <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a> · <a href="https://www.facturation.gouv.fr" target="_blank" rel="noopener">facturation.gouv.fr</a> · <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">EUR-Lex</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.insee.fr" target="_blank" rel="noopener">INSEE</a> · <a href="https://ec.europa.eu/taxation_customs/vies/" target="_blank" rel="noopener">VIES</a></span>
+  <p style="margin:4px 0 0;font-size:12px;opacity:.8">© 2026 Jeremy : Data Analyst · Automatisation &amp; IA · <a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</div></footer>
+
+<script>
+function toggleTheme(){var r=document.documentElement;var d=r.getAttribute('data-theme')==='dark';r.setAttribute('data-theme',d?'light':'dark');try{localStorage.setItem('theme',d?'light':'dark')}catch(e){}}
+(function(){
+  if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}
+})();
+
+var PROCS = [
+  {id:'relance', t:'Relance des factures impayées', base:92, d:'impayes', blocs:'Bloc C · B24', labo:'labo-demo.html?f=encaisser'},
+  {id:'devis', t:'Devis et relance de devis', base:88, d:'devis', blocs:'B1 · B14', labo:'labo-demo.html?f=vendre'},
+  {id:'rapprochement', t:'Rapprochement bancaire', base:90, d:'rapprochement', blocs:'B9', labo:'labo-demo.html?f=encaisser'},
+  {id:'emails', t:'Tri des emails et extraction', base:86, d:'emails', blocs:'B3', labo:'labo-demo.html?f=encaisser'},
+  {id:'faq', t:'Réponses aux questions clients', base:91, d:'faq', blocs:'B5', labo:'labo-demo.html?f=servir'},
+  {id:'rdv', t:'Rappels et prise de RDV', base:87, d:'rdv', blocs:'B4 · B6', labo:'labo-demo.html?f=servir'},
+  {id:'cr', t:'Comptes-rendus de réunion', base:85, d:'cr', blocs:'B8', labo:'labo-demo.html?f=savoir'},
+  {id:'felec', t:'Facturation électronique', base:90, d:'felec', blocs:'B21 à B26', labo:'labo-demo.html?f=conformite'},
+  {id:'reporting', t:'Reporting et tableaux', base:84, d:'reporting', blocs:'B10 · F5', labo:'labo-demo.html?f=savoir'},
+  {id:'avis', t:'Réponse aux avis Google', base:82, d:'avis', blocs:'B2', labo:'labo-demo.html?f=servir'},
+  {id:'contrats', t:'Suivi des contrats et reconductions', base:88, d:'contrats', blocs:'B23', labo:'labo-demo.html?f=conformite'},
+  {id:'cv', t:'Pré-sélection de CV', base:78, d:'cv', blocs:'E1', labo:'labo-demo.html?f=savoir'},
+  {id:'notes', t:'Notes de frais', base:86, d:'notes', blocs:'B18', labo:'labo-demo.html?f=encaisser'},
+  {id:'stock', t:'Gestion des stocks', base:80, d:'stock', blocs:'B7', labo:'labo-demo.html?f=automatisations'},
+];
+
+var selected = [];
+function renderProcs(){
+  var box = document.getElementById('proc-list');
+  box.innerHTML = '';
+  PROCS.forEach(function(p){
+    var lab = document.createElement('label');
+    lab.style.cssText = 'display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line,#e5e7eb);border-radius:10px;cursor:pointer;font-size:14px;background:var(--paper,#fff)';
+    lab.innerHTML = '<input type="checkbox" value="'+p.id+'"> <span>'+p.t+'</span>';
+    box.appendChild(lab);
+  });
+  var btn = document.createElement('p');
+  btn.style.marginTop = '14px';
+  btn.innerHTML = '<button class="btn btn-primary" onclick="goStep2()">Continuer</button>';
+  box.appendChild(btn);
+}
+function goStep2(){
+  var checks = document.querySelectorAll('#proc-list input:checked');
+  selected = Array.prototype.map.call(checks, function(c){ return c.value; });
+  if(!selected.length){ alert('Cochez au moins un processus.'); return; }
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
+  var q = document.getElementById('q-list');
+  q.innerHTML = '';
+  selected.forEach(function(id){
+    var p = PROCS.find(function(x){ return x.id === id; });
+    var card = document.createElement('div');
+    card.style.cssText = 'padding:12px 14px;border:1px solid var(--line,#e5e7eb);border-radius:12px;background:var(--paper,#fff)';
+    card.innerHTML = '<p style="margin:0 0 8px;font-weight:600;font-size:14px">'+p.t+'</p>' +
+      '<label style="font-size:12px;opacity:.8;display:block;margin:6px 0 2px">Temps passé chaque semaine</label>' +
+      '<select data-id="'+id+'" data-q="temps" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--line,#e5e7eb);background:var(--paper,#fff)">' +
+      '<option value="1">Moins d\'1 h</option><option value="2" selected>1 à 5 h</option><option value="3">Plus de 5 h</option></select>' +
+      '<label style="font-size:12px;opacity:.8;display:block;margin:6px 0 2px">Fréquence</label>' +
+      '<select data-id="'+id+'" data-q="freq" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--line,#e5e7eb);background:var(--paper,#fff)">' +
+      '<option value="1">Mensuelle</option><option value="2" selected>Hebdomadaire</option><option value="3">Quotidienne</option></select>' +
+      '<label style="font-size:12px;opacity:.8;display:block;margin:6px 0 2px">Si le résultat est faux</label>' +
+      '<select data-id="'+id+'" data-q="risque" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--line,#e5e7eb);background:var(--paper,#fff)">' +
+      '<option value="1" selected>Conséquence mineure</option><option value="2">Conséquence moyenne</option><option value="3">Conséquence grave</option></select>';
+    q.appendChild(card);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function calcMatrix(){
+  var scores = {};
+  selected.forEach(function(id){
+    var p = PROCS.find(function(x){ return x.id === id; });
+    var temps = parseInt(document.querySelector('select[data-id="'+id+'"][data-q="temps"]').value, 10);
+    var freq = parseInt(document.querySelector('select[data-id="'+id+'"][data-q="freq"]').value, 10);
+    var risque = parseInt(document.querySelector('select[data-id="'+id+'"][data-q="risque"]').value, 10);
+    var poids = 0;
+    if(temps === 2) poids += 8; else if(temps === 3) poids += 14;
+    if(freq === 2) poids += 6; else if(freq === 3) poids += 10;
+    if(risque === 2) poids -= 8; else if(risque === 3) poids -= 18;
+    var s = Math.max(0, Math.min(100, p.base + poids));
+    scores[id] = s;
+  });
+  renderMatrix(scores);
+}
+function renderMatrix(scores){
+  document.getElementById('step2').style.display = 'none';
+  var res = document.getElementById('result');
+  res.style.display = 'block';
+  var groups = {DEPLOY:[], PILOT:[], ASSIST:[], HOLD:[]};
+  var nReady = 0, nHuman = 0;
+  selected.forEach(function(id){
+    var p = PROCS.find(function(x){ return x.id === id; });
+    var s = scores[id];
+    var act;
+    if(s >= 85){ act = 'DEPLOY'; nReady++; }
+    else if(s >= 70){ act = 'PILOT'; nReady++; }
+    else if(s >= 50){ act = 'ASSIST'; nHuman++; }
+    else { act = 'HOLD'; nHuman++; }
+    groups[act].push({p:p, s:s});
+  });
+  document.getElementById('resume-matrix').textContent = nReady + ' processus prêts à automatiser, ' + nHuman + ' à garder sous contrôle humain.';
+  var box = document.getElementById('matrix-box');
+  box.innerHTML = '';
+  var cols = [
+    {k:'DEPLOY', label:'DEPLOY · prêt', color:'#1e7a4f', bg:'rgba(30,122,79,.08)'},
+    {k:'PILOT', label:'PILOT · à tester', color:'#b7791f', bg:'rgba(183,121,31,.08)'},
+    {k:'ASSIST', label:'ASSIST · l\'IA aide', color:'#c05621', bg:'rgba(192,86,33,.08)'},
+    {k:'HOLD', label:'HOLD · reste humain', color:'#c0392b', bg:'rgba(192,57,43,.08)'}
+  ];
+  cols.forEach(function(col){
+    var div = document.createElement('div');
+    div.style.cssText = 'border:1px solid '+col.color+';border-radius:12px;padding:12px;background:'+col.bg;
+    var items = groups[col.k].map(function(g){
+      return '<div style="margin:6px 0;font-size:13px"><strong>'+g.p.t+'</strong> <span style="opacity:.8">('+g.s+'/100)</span><br>' +
+        '<a href="'+g.p.labo+'" style="font-size:12px">'+g.p.blocs+' · tester la démo →</a></div>';
+    }).join('');
+    div.innerHTML = '<p style="margin:0 0 6px;font-weight:700;font-size:13px;color:'+col.color+'">'+col.label+'</p>' + (items || '<p style="font-size:13px;opacity:.6;margin:4px 0">Aucun processus ici</p>');
+    box.appendChild(div);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+renderProcs();
+</script>
+<script src="besoin-widget.js"></script>
+</body></html>

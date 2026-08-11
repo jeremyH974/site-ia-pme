@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratoire IA : testez les automatisations en direct</title>
+<meta name="description" content="Testez en direct 6 automatisations IA : devis, relance impayés, réponse avis, compte-rendu, standard vocal, tri d'emails. Tapez vos données, cliquez, voyez l'IA travailler.">
+<link rel="stylesheet" href="style.css?v=38">
+<style>
+.demo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+@media(max-width:860px){.demo-grid{grid-template-columns:1fr}}
+.demo-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.demo-card h3{margin:0 0 4px;font-size:18px}
+.demo-card .demo-desc{font-size:13px;color:var(--ink-soft);margin-bottom:14px}
+.demo-card label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);display:block;margin:10px 0 4px}
+.demo-card input,.demo-card select,.demo-card textarea{width:100%;box-sizing:border-box;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:var(--paper);color:var(--ink)}
+.demo-card textarea{min-height:54px;resize:vertical}
+.demo-card .btn{margin-top:14px}
+.demo-out{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13px;white-space:pre-wrap;margin-top:12px;min-height:40px;max-height:280px;overflow-y:auto;display:none}
+.demo-out.visible{display:block}
+.demo-out.loading{color:var(--ink-soft);font-style:italic}
+.demo-out.error{color:#c0392b}
+.demo-card .ex{font-size:11px;color:var(--ink-soft);margin-top:8px}
+</style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://jeremyh974.github.io/site-ia-pme/labo-demo.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://jeremyh974.github.io/site-ia-pme/labo-demo.html">
+<meta property="og:title" content="Laboratoire IA : testez les automatisations en direct">
+<meta property="og:description" content="Testez en direct 6 automatisations IA : devis, relance impayés, réponse avis, compte-rendu, standard vocal, tri d'emails. Tapez vos données, cliquez, voyez l'IA travailler.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService",
+"name":"Jeremy : Consultant IA & Automatisation pour PME",
+"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
+"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
+"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+</script>
+<script>/* theme-init */
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(e){}}</script>
+</head>
+<body>
+
+<header class="site-header nav-v4"><!-- nav-v4 -->
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Jeremy<span>, Data Analyst · Automatisation &amp; IA</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="solutions-par-besoin.html">Solutions</a>
+      <a href="guides.html">Guides</a>
+      <a href="demos.html">Démos</a>
+      
+      
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+      <a class="btn btn-primary nav-cta" href="contact.html">15 min offertes</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary>☰ Menu</summary>
+      <nav aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="detecteur-taches.html">🎯 Trouver mes tâches</a>
+        <a href="automatiser-devis.html">Devis &amp; factures</a>
+        <a href="relance-impayes.html">Relances &amp; impayés</a>
+        <a href="service-client.html">Service client &amp; avis</a>
+        <a href="compte-rendu-reunion.html">Comptes-rendus &amp; RDV</a>
+        <a href="index.html#solutions">Toutes les solutions →</a>
+        <a href="guides.html">Guides gratuits</a>
+        <a href="demos.html">Démos</a>
+        
+        
+        <button class="theme-toggle theme-toggle-mobile" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+<a class="btn btn-primary" href="contact.html">15 min offertes</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Le Laboratoire IA</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Démonstration en direct · IA réelle, pas de vidéo</span>
+    <h1>Le Laboratoire <em>IA</em></h1>
+    <p class="sub">Tapez vos données, cliquez, et regardez l'IA travailler en direct. Chaque résultat est généré à l'instant par une vraie automatisation : c'est exactement ce que vous pourriez avoir chez vous.</p>
+  </div>
+</section>
+
+<style>
+.labo-filtres{margin:18px 0 22px;padding:14px 16px;border-radius:12px}
+.labo-filtres input{width:100%;padding:10px 12px;border-radius:8px;font-size:14px;margin-bottom:10px}
+.labo-btns{display:flex;flex-wrap:wrap;gap:8px}
+.fbtn{padding:7px 12px;border:1px solid var(--border,#e5e7eb);border-radius:20px;background:transparent;cursor:pointer;font-size:13px;color:inherit}
+.fbtn.on{background:var(--accent,#2563eb);color:#fff;border-color:var(--accent,#2563eb)}
+[data-theme="dark"] .labo-filtres{background:#16231c;border-color:#2a5a41}
+[data-theme="dark"] .labo-filtres input{background:#1c221f;border-color:#2a332e;color:#e8ece8}
+[data-theme="dark"] .fbtn{border-color:#2a332e;color:#a8b2ab}
+[data-theme="dark"] .fbtn.on{background:#3fae78;color:#121614;border-color:#3fae78}
+.demo-card{transition:opacity .15s}
+.demo-card.hide{display:none}
+</style>
+<div class="demo-grid">
+
+      <div class="demo-card" data-besoin="vendre">
+        <h3>💶 Agent Devis</h3>
+        <div class="demo-desc">Un devis chiffré en 30 secondes, 24h/24 : même la nuit.</div>
+        <label>Métier</label>
+        <select id="dev-vert"><option value="artisan">Peintre</option><option value="garage">Garage</option><option value="resto">Traiteur</option></select>
+        <label>Client</label><input id="dev-client" value="M. Paul Lefèvre">
+        <label>Prestation</label><input id="dev-prest" value="Peinture salon 25 m²">
+        <label>Détails</label><input id="dev-details" value="2 couches, fournitures incluses">
+        <button class="btn btn-primary" onclick="runDemo('devis')">⚡ Générer le devis</button>
+        <div class="demo-out" id="out-devis"></div>
+        <div class="ex">Exemple : un artisan qui répond en 30 s gagne le chantier avant le voisin.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="encaisser">
+        <h3>📧 Relance impayés</h3>
+        <div class="demo-desc">Le bon ton, au bon moment : J+7, J+21, J+35 automatiquement.</div>
+        <label>Client</label><input id="rel-client" value="SARL Dupont BTP">
+        <label>Montant (€)</label><input id="rel-montant" value="3450">
+        <label>Jours de retard</label><input id="rel-jours" value="28">
+        <button class="btn btn-primary" onclick="runDemo('relance')">⚡ Générer la relance</button>
+        <div class="demo-out" id="out-relance"></div>
+        <div class="ex">28 jours = palier 2 automatique : ferme mais courtois.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>⭐ Réponse avis Google</h3>
+        <div class="demo-desc">Une réponse pro à chaque avis, sans y passer des heures.</div>
+        <label>Note (/5)</label>
+        <select id="avi-note"><option value="5">5 étoiles</option><option value="3">3 étoiles</option><option value="1">1 étoile</option></select>
+        <label>Client</label><input id="avi-client" value="Mme Céline Roux">
+        <label>Texte de l'avis</label><textarea id="avi-texte">Très bon travail mais un délai un peu long.</textarea>
+        <button class="btn btn-primary" onclick="runDemo('avis')">⚡ Générer la réponse</button>
+        <div class="demo-out" id="out-avis"></div>
+        <div class="ex">Le négatif se traite en privé, le positif se transforme en fidélité.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="savoir">
+        <h3>📝 Compte-rendu</h3>
+        <div class="demo-desc">Des notes brutes au CR structuré en 1 minute.</div>
+        <label>Type</label>
+        <select id="cr-source"><option value="réunion chantier">Réunion chantier</option><option value="consultation">Consultation</option><option value="réunion équipe">Réunion équipe</option></select>
+        <label>Notes brutes</label><textarea id="cr-notes">Réunion avec Dupont BTP. Surface 120m2. Peinture murs + plafonds. Budget 4500. Commencer le 15 août.</textarea>
+        <button class="btn btn-primary" onclick="runDemo('cr')">⚡ Générer le CR</button>
+        <div class="demo-out" id="out-cr"></div>
+        <div class="ex">Décisions, actions, échéances : prêt à envoyer.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>🎙️ Standard vocal</h3>
+        <div class="demo-desc">Le standard qui répond et qui sait quand s'arrêter.</div>
+        <label>Question au téléphone</label>
+        <textarea id="voc-question">Bonjour, je voudrais savoir si vous avez un créneau demain matin pour une révision.</textarea>
+        <button class="btn btn-primary" onclick="runDemo('vocal')">⚡ Générer la réponse</button>
+        <div class="demo-out" id="out-vocal"></div>
+        <div class="ex">Réponse courte, parlée, avec une action concrète.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="encaisser">
+        <h3>📊 Tri email + facture</h3>
+        <div class="demo-desc">L'email est classé, la facture est extraite.</div>
+        <label>Expéditeur</label><input id="tri-exp" value="fournisseur@peintures-pro.fr">
+        <label>Sujet</label><input id="tri-sujet" value="Facture n° F-2026-452">
+        <label>Corps</label><textarea id="tri-corps">Vous trouverez ci-joint la facture F-2026-452 d'un montant de 1 240,50 € TTC, échéance le 15 septembre 2026.</textarea>
+        <button class="btn btn-primary" onclick="runDemo('tri')">⚡ Trier l'email</button>
+        <div class="demo-out" id="out-tri"></div>
+        <div class="ex">N° de facture, montant, échéance extraits automatiquement.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>📅 Rappel RDV / no-show</h3>
+        <div class="demo-desc">Le rappel de la veille qui remplit votre agenda.</div>
+        <label>Client</label><input id="rdv-client" value="Mme Laurence Petit">
+        <label>Date du RDV</label><input id="rdv-date" value="02/08/2026">
+        <label>Heure</label><input id="rdv-heure" value="09:30">
+        <label>Prestation</label><input id="rdv-prest" value="Révision + contrôle technique">
+        <button class="btn btn-primary" onclick="runDemo('rdv')">⚡ Générer le rappel</button>
+        <div class="demo-out" id="out-rdv"></div>
+        <div class="ex">Un rappel personnalisé la veille = zéro créneau vide.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>💬 Standard IA / FAQ</h3>
+        <div class="demo-desc">Le standard qui répond sans faire attendre.</div>
+        <label>Question</label><textarea id="faq-question">Quels sont vos horaires d'ouverture ?</textarea>
+        <button class="btn btn-primary" onclick="runDemo('faq')">⚡ Générer la réponse</button>
+        <div class="demo-out" id="out-faq"></div>
+        <div class="ex">Réponse depuis votre base, escalade humaine si besoin.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>🗓️ Prise de RDV (créneaux)</h3>
+        <div class="demo-desc">3 créneaux proposés automatiquement.</div>
+        <label>Client</label><input id="cre-client" value="Mme Claire Dubois">
+        <label>Prestation</label><input id="cre-prest" value="Révision Peugeot 208">
+        <label>Préférences</label><input id="cre-prefs" value="mardi ou jeudi après-midi">
+        <button class="btn btn-primary" onclick="runDemo('creneaux')">⚡ Proposer les créneaux</button>
+        <div class="demo-out" id="out-creneaux"></div>
+        <div class="ex">Le client choisit, le créneau se confirme tout seul.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="produire">
+        <h3>📦 Stock (alertes)</h3>
+        <div class="demo-desc">L'alerte de seuil + la commande suggérée.</div>
+        <label>Produit</label><input id="stk-produit" value="Peinture blanche 10L">
+        <label>Niveau actuel</label><input id="stk-niveau" value="2">
+        <label>Seuil</label><input id="stk-seuil" value="5">
+        <label>Fournisseur</label><input id="stk-four" value="Peintures Pro">
+        <button class="btn btn-primary" onclick="runDemo('stock')">⚡ Vérifier le stock</button>
+        <div class="demo-out" id="out-stock"></div>
+        <div class="ex">Niveau sous le seuil → alerte + quantité de réappro.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="encaisser">
+        <h3>🏦 Rapprochement bancaire</h3>
+        <div class="demo-desc">L'opération comparée à la facture attendue.</div>
+        <label>Libellé de l'opération</label><input id="rap-lib" value="VIREMENT SARL DUPONT">
+        <label>Montant (€)</label><input id="rap-montant" value="2450">
+        <label>Facture attendue</label><input id="rap-fact" value="FAC-2026-118">
+        <button class="btn btn-primary" onclick="runDemo('rapprochement')">⚡ Rapprocher</button>
+        <div class="demo-out" id="out-rapprochement"></div>
+        <div class="ex">Rapprochée, partielle ou inconnue : avec l'action à faire.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="savoir">
+        <h3>📈 Reporting auto</h3>
+        <div class="demo-desc">Le rapport hebdo chiffré, sans tableau.</div>
+        <label>Période</label><input id="rep-periode" value="Semaine du 27/07">
+        <label>CA (€)</label><input id="rep-ca" value="14520">
+        <label>Factures</label><input id="rep-nb" value="52">
+        <label>Contexte</label><input id="rep-contexte" value="CA en hausse de 18%, 3 nouveaux clients">
+        <button class="btn btn-primary" onclick="runDemo('reporting')">⚡ Générer le rapport</button>
+        <div class="demo-out" id="out-reporting"></div>
+        <div class="ex">Anomalies détectées + actions proposées.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>🚚 Statut client</h3>
+        <div class="demo-desc">Le client informé, sans appeler.</div>
+        <label>Client</label><input id="st-client" value="M. Paul Lefèvre">
+        <label>Prestation</label><input id="st-prest" value="Peinture appartement">
+        <label>Statut</label>
+        <select id="st-etape"><option value="en_cours">En cours</option><option value="pret">Prêt</option><option value="retard">En retard</option></select>
+        <button class="btn btn-primary" onclick="runDemo('statut')">⚡ Générer le message</button>
+        <div class="demo-out" id="out-statut"></div>
+        <div class="ex">« Où en est ma commande ? » : plus besoin d'appeler.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>🔄 Retour client</h3>
+        <div class="demo-desc">Le rappel qui fait revenir (entretien, retouche, abonnement).</div>
+        <label>Client</label><input id="ret-client" value="M. Paul Lefèvre">
+        <label>Prestation</label><input id="ret-prest" value="Contrôle technique">
+        <label>Échéance</label><input id="ret-echeance" value="04/08/2026">
+        <button class="btn btn-primary" onclick="runDemo('retour')">⚡ Générer le rappel</button>
+        <div class="demo-out" id="out-retour"></div>
+        <div class="ex">Le bon rappel au bon moment = le client revient.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="savoir">
+        <h3>🌅 Briefing matinal</h3>
+        <div class="demo-desc">Votre journée résumée chaque matin : agenda, emails, actu.</div>
+        <button class="btn btn-primary" onclick="runDemo('briefing')">⚡ Générer le briefing du jour</button>
+        <div class="demo-out" id="out-briefing"></div>
+        <div class="ex">« Résultat dès demain matin, 7 h » : le dirigeant qui gagne 20 min par jour.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="savoir">
+        <h3>📡 Veille concurrentielle</h3>
+        <div class="demo-desc">Les signaux de votre marché, synthétisés chaque matin.</div>
+        <button class="btn btn-primary" onclick="runDemo('veille')">⚡ Générer la veille du jour</button>
+        <div class="demo-out" id="out-veille"></div>
+        <div class="ex">3 signaux, 1 menace, 1 opportunité : sans lire 20 articles.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="servir">
+        <h3>🎫 Support tickets</h3>
+        <div class="demo-desc">Chaque ticket classé + brouillon de réponse prêt.</div>
+        <button class="btn btn-primary" onclick="runDemo('support')">⚡ Traiter les tickets</button>
+        <div class="demo-out" id="out-support"></div>
+        <div class="ex">« Le client servi en 2 min, pas en 2 jours. »</div>
+      </div>
+
+      <div class="demo-card" data-besoin="encaisser">
+        <h3>🧾 Notes de frais par photo</h3>
+        <div class="demo-desc">Le reçu devient une ligne de notes de frais, automatiquement.</div>
+        <button class="btn btn-primary" onclick="runDemo('notes-frais')">⚡ Extraire le reçu</button>
+        <div class="demo-out" id="out-notes-frais"></div>
+        <div class="ex">Fournisseur, date, montant, catégorie : zéro saisie manuelle.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="vendre">
+        <h3>💡 Machine à idées</h3>
+        <div class="demo-desc">5 idées de contenu (posts + articles) avec angle et hook.</div>
+        <button class="btn btn-primary" onclick="runDemo('idees')">⚡ Générer 5 idées</button>
+        <div class="demo-out" id="out-idees"></div>
+        <div class="ex">« Je n'ai plus jamais de page blanche. »</div>
+      </div>
+
+      <div class="demo-card" data-besoin="vendre">
+        <h3>📰 Rédaction SEO</h3>
+        <div class="demo-desc">Un article structuré (H1, H2, CTA) prêt à publier.</div>
+        <button class="btn btn-primary" onclick="runDemo('seo')">⚡ Rédiger l'article</button>
+        <div class="demo-out" id="out-seo"></div>
+        <div class="ex">Le contenu qui fait venir des clients, sans agence de rédaction.</div>
+      </div>
+
+            <div class="demo-card" data-besoin="conformite">
+        <h3>🗂️ Base clients prête</h3>
+        <div class="demo-desc">SIRET, TVA intracom, APE, emails : les erreurs détectées avant l'échéance.</div>
+        <button class="btn btn-primary" onclick="runDemo('base-clients')">⚡ Vérifier la base</button>
+        <div class="demo-out" id="out-base-clients"></div>
+        <div class="ex">Les validations sont calculées (clé SIRET, TVA officielle) : pas devinées.</div>
+      </div>
+
+                                                                                                                  <div class="demo-card" data-besoin="vendre">
+        <h3>📣 QA campagnes</h3>
+        <div class="demo-desc">Promesses sans source, témoignages douteux, CTA manquant : le réviseur avant publication.</div>
+        <button class="btn btn-primary" onclick="runDemo('qa-campagnes')">⚡ Vérifier les campagnes</button>
+        <div class="demo-out" id="out-qa-campagnes"></div>
+        <div class="ex">Une campagne qui promet sans preuve, c'est une réputation en jeu.</div>
+      </div>
+
+<div class="demo-card" data-besoin="servir">
+        <h3>🔁 Remboursements</h3>
+        <div class="demo-desc">Éligible, à valider, refusé : le statut calculé, le brouillon de réponse prêt.</div>
+        <button class="btn btn-primary" onclick="runDemo('remboursements')">⚡ Trier les demandes</button>
+        <div class="demo-out" id="out-remboursements"></div>
+        <div class="ex">L'humain valide le montant, l'IA prépare la réponse.</div>
+      </div>
+
+<div class="demo-card" data-besoin="servir">
+        <h3>💬 Retours clients</h3>
+        <div class="demo-desc">Des centaines d'avis deviennent 3 thèmes et 3 actions concrètes.</div>
+        <button class="btn btn-primary" onclick="runDemo('clusters-retours')">⚡ Regrouper les retours</button>
+        <div class="demo-out" id="out-clusters-retours"></div>
+        <div class="ex">Écouter ses clients, c'est savoir ce qui revient le plus souvent.</div>
+      </div>
+
+<div class="demo-card" data-besoin="encaisser">
+        <h3>📊 Dépenses fournisseurs</h3>
+        <div class="demo-desc">Hausses détectées avant de payer, questions de négociation prêtes.</div>
+        <button class="btn btn-primary" onclick="runDemo('depenses-fournisseurs')">⚡ Analyser les factures</button>
+        <div class="demo-out" id="out-depenses-fournisseurs"></div>
+        <div class="ex">Une hausse de 30 % non vue, c'est de l'argent perdu.</div>
+      </div>
+
+<div class="demo-card" data-besoin="servir">
+        <h3>🛡️ Paratonnerre</h3>
+        <div class="demo-desc">Les messages qui peuvent partir en crise, repérés avant. Brouillon d'apaisement prêt.</div>
+        <button class="btn btn-primary" onclick="runDemo('risque-escalade')">⚡ Analyser les messages</button>
+        <div class="demo-out" id="out-risque-escalade"></div>
+        <div class="ex">Un client qui menace, c'est une crise évitable si on agit à temps.</div>
+      </div>
+
+<div class="demo-card" data-besoin="servir">
+        <h3>🎫 Tickets en double</h3>
+        <div class="demo-desc">Même client, même problème : le doublon détecté, la fusion proposée.</div>
+        <button class="btn btn-primary" onclick="runDemo('dup-tickets')">⚡ Détecter les doublons</button>
+        <div class="demo-out" id="out-dup-tickets"></div>
+        <div class="ex">Moins de tickets ouverts deux fois, moins de clients agacés.</div>
+      </div>
+
+<div class="demo-card" data-besoin="temps">
+        <h3>🤵 Chef de cabinet IA</h3>
+        <div class="demo-desc">Chaque matin : journée, emails priorisés, échéances, actions prêtes. L'assistant du dirigeant.</div>
+        <button class="btn btn-primary" onclick="runDemo('chef-cabinet')">⚡ Ouvrir mon briefing</button>
+        <div class="demo-out" id="out-chef-cabinet"></div>
+        <div class="ex">L'urgent est détecté par le code, pas deviné. Le briefing est prêt à 7h.</div>
+      </div>
+
+<div class="demo-card" data-besoin="conformite">
+        <h3>📋 Entrée en relation</h3>
+        <div class="demo-desc">Professions réglementées : le document d'entrée en relation prêt, à valider par le professionnel.</div>
+        <button class="btn btn-primary" onclick="runDemo('doc-relation')">⚡ Générer le document</button>
+        <div class="demo-out" id="out-doc-relation"></div>
+        <div class="ex">Un modèle, pas un avis : le professionnel valide avant envoi.</div>
+      </div>
+
+<div class="demo-card" data-besoin="sante">
+        <h3>💊 Ordonnancier</h3>
+        <div class="demo-desc">Pharmacie : complétude vérifiée, points à contrôler avec le prescripteur. Zéro avis médical.</div>
+        <button class="btn btn-primary" onclick="runDemo('ordonnancier')">⚡ Vérifier les ordonnances</button>
+        <div class="demo-out" id="out-ordonnancier"></div>
+        <div class="ex">L'IA prépare la vérification, le pharmacien décide : jamais l'inverse.</div>
+      </div>
+
+<div class="demo-card" data-besoin="vendre">
+        <h3>💛 Clients perdus de vue</h3>
+        <div class="demo-desc">90 jours sans activité : relance douce. 180 jours : reconquête. Le statut est calculé.</div>
+        <button class="btn btn-primary" onclick="runDemo('clients-inactifs')">⚡ Relancer les inactifs</button>
+        <div class="demo-out" id="out-clients-inactifs"></div>
+        <div class="ex">Le client qui revient coûte 5× moins cher qu'un nouveau.</div>
+      </div>
+
+<div class="demo-card" data-besoin="savoir">
+        <h3>📊 Clôture mensuelle</h3>
+        <div class="demo-desc">Ventes, achats, banque consolidés : l'écart calculé, les anomalies listées.</div>
+        <button class="btn btn-primary" onclick="runDemo('cloture')">⚡ Consolider la clôture</button>
+        <div class="demo-out" id="out-cloture"></div>
+        <div class="ex">Fini le copier-coller entre tableurs : les totaux sont calculés, pas devinés.</div>
+      </div>
+
+<div class="demo-card" data-besoin="savoir">
+        <h3>👥 Présélection candidatures</h3>
+        <div class="demo-desc">CV pré-triés sur des critères objectifs, questions d'entretien prêtes. La décision reste humaine.</div>
+        <button class="btn btn-primary" onclick="runDemo('preselection')">⚡ Pré-trier les CV</button>
+        <div class="demo-out" id="out-preselection"></div>
+        <div class="ex">Le pré-tri aide, l'humain décide (tri de CV = domaine sensible, IA Act).</div>
+      </div>
+
+<div class="demo-card" data-besoin="vendre">
+        <h3>🗃️ Base sans doublons</h3>
+        <div class="demo-desc">Même SIRET, même email, nom normalisé : les doublons détectés, le maître choisi.</div>
+        <button class="btn btn-primary" onclick="runDemo('dedoublonnage')">⚡ Nettoyer la base</button>
+        <div class="demo-out" id="out-dedoublonnage"></div>
+        <div class="ex">Une base propre = des relances qui partent au bon endroit, pas deux fois.</div>
+      </div>
+
+<div class="demo-card" data-besoin="vendre">
+        <h3>📇 Fiche après appel</h3>
+        <div class="demo-desc">Les notes brutes d'un appel deviennent une fiche client structurée, relance datée.</div>
+        <button class="btn btn-primary" onclick="runDemo('fiches-appels')">⚡ Structurer la fiche</button>
+        <div class="demo-out" id="out-fiches-appels"></div>
+        <div class="ex">L'appel fini, la fiche remplie, la relance planifiée : le commercial gagne 20 min.</div>
+      </div>
+
+<div class="demo-card" data-besoin="conformite">
+        <h3>🤖 Transparence IA</h3>
+        <div class="demo-desc">L'IA Act : le niveau de chaque usage IA, les mentions à afficher, les actions.</div>
+        <button class="btn btn-primary" onclick="runDemo('transparence-ia')">⚡ Auditer les usages IA</button>
+        <div class="demo-out" id="out-transparence-ia"></div>
+        <div class="ex">Chatbot, tri de CV, relances : chaque usage classé, les obligations claires.</div>
+      </div>
+
+<div class="demo-card" data-besoin="encaisser">
+        <h3>📨 Suivi des transmissions</h3>
+        <div class="demo-desc">Facture acceptée, en attente ou rejetée : la relance client prête pour chaque rejet.</div>
+        <button class="btn btn-primary" onclick="runDemo('statuts-transmission')">⚡ Suivre les factures</button>
+        <div class="demo-out" id="out-statuts-transmission"></div>
+        <div class="ex">Une facture rejetée par la PDP, c'est un paiement en retard. On relance avant.</div>
+      </div>
+
+<div class="demo-card" data-besoin="encaisser">
+        <h3>🌍 Factures internationales</h3>
+        <div class="demo-desc">Autoliquidation, export, VIES : le bon régime TVA pour chaque client étranger.</div>
+        <button class="btn btn-primary" onclick="runDemo('factures-intl')">⚡ Vérifier les régimes</button>
+        <div class="demo-out" id="out-factures-intl"></div>
+        <div class="ex">Une TVA fausse sur une facture UE = une amende. Le régime est calculé, pas deviné.</div>
+      </div>
+
+<div class="demo-card" data-besoin="conformite">
+        <h3>✅ Vérificateur de factures</h3>
+        <div class="demo-desc">Numéros, SIRET, TVA, montants : les erreurs détectées AVANT l'envoi.</div>
+        <button class="btn btn-primary" onclick="runDemo('verif-factures')">⚡ Vérifier les factures</button>
+        <div class="demo-out" id="out-verif-factures"></div>
+        <div class="ex">Une facture rejetée par la PDP = un paiement retardé. On vérifie avant.</div>
+      </div>
+
+<div class="demo-card" data-besoin="encaisser">
+        <h3>⏰ Reconductions tacites</h3>
+        <div class="demo-desc">Le contrat qui se reconduit tout seul : la lettre de résiliation prête AVANT la date limite.</div>
+        <button class="btn btn-primary" onclick="runDemo('reconductions')">⚡ Vérifier les échéances</button>
+        <div class="demo-out" id="out-reconductions"></div>
+        <div class="ex">Assurance, maintenance, abonnements : la fenêtre de résiliation est calculée, pas devinée.</div>
+      </div>
+
+<div class="demo-card" data-besoin="conformite">
+        <h3>🧾 Facturation électronique</h3>
+        <div class="demo-desc">Votre bilan de conformité et les actions datées : réception 09/2026, émission 09/2027.</div>
+        <button class="btn btn-primary" onclick="runDemo('facture-elec')">⚡ Générer le bilan</button>
+        <div class="demo-out" id="out-facture-elec"></div>
+        <div class="ex">La loi s'applique à toutes les entreprises : le niveau est calculé, pas deviné.</div>
+      </div>
+
+      <div class="demo-card" data-besoin="vendre">
+        <h3>📄 Relance de devis</h3>
+        <div class="demo-desc">Le devis sans réponse relancé au bon moment : J+7, J+14, J+21.</div>
+        <label>Client</label><input id="rd-client" value="M. Paul Lefèvre">
+        <label>Prestation</label><input id="rd-prest" value="Peinture appartement 70 m²">
+        <label>Montant (€)</label><input id="rd-montant" value="2450">
+        <label>Jours depuis l'envoi</label><input id="rd-jours" value="14">
+        <button class="btn btn-primary" onclick="runDemo('relance-devis')">⚡ Générer la relance</button>
+        <div class="demo-out" id="out-relance-devis"></div>
+        <div class="ex">70 % des devis perdus ne sont jamais relancés. C'est le pain n°1 des commerciaux.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="text-align:center">
+    <span class="section-label">Et chez vous, concrètement ?</span>
+    <h2>Ce que vous venez de voir peut tourner pour votre entreprise</h2>
+    <div class="cta-inline" style="justify-content:center">
+      <a class="btn btn-primary" href="contact.html">15 min offertes pour chiffrer votre cas</a>
+      <a class="btn btn-ghost" href="demos.html">Voir les démos complètes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-condensed footer-v2"><div class="wrap footer-grid">
+  <div class="footer-brand">
+    <p class="footer-logo">Jeremy, Data Analyst · Automatisation &amp; IA</p>
+    <p class="footer-tagline">Des automatisations testables en direct, sourcées, sans jargon.</p>
+    <a class="btn btn-primary" href="contact.html">📞 15 min offertes</a>
+  </div>
+  <nav class="footer-col" aria-label="Explorer">
+    <p class="footer-title">Explorer</p>
+    <a href="index.html">Accueil</a>
+    <a href="solutions-par-besoin.html">Solutions par besoin</a>
+    <a href="automatisations.html">Les 35 automatisations</a>
+    <a href="labo-demo.html">Labo (démos en direct)</a>
+  </nav>
+  <nav class="footer-col" aria-label="Ressources">
+    <p class="footer-title">Ressources</p>
+    <a href="guides.html">Guides</a>
+    <a href="formation-n8n.html">Formation n8n</a>
+    <a href="no-code-cest-quoi.html">No-code</a>
+    <a href="freelance-automatisation-n8n.html">Freelance n8n</a>
+    <a href="consultant-ia-pme.html">Consultant IA PME</a>
+    <a href="engagements-fiabilite.html">🛡️ Fiabilité</a>
+    <a href="l-ia-peut-elle-se-tromper.html">🤔 L'IA se trompe-t-elle ?</a>
+    <a href="a-propos.html">À propos</a>
+  </nav>
+  <nav class="footer-col" aria-label="Métiers">
+    <p class="footer-title">Métiers</p>
+    <a href="hub-artisans-btp.html">Artisans &amp; BTP</a>
+    <a href="hub-sante-bien-etre.html">Santé</a>
+    <a href="hub-tourisme-accueil.html">Tourisme</a>
+    <a href="hub-commerce-services.html">Commerce</a>
+    <a href="hub-transport-logistique.html">Transport</a>
+    <a href="hub-b2b-pro.html">B2B &amp; pro</a>
+  </nav>
+</div>
+<div class="wrap footer-bottom">
+  <span class="data-sources" style="font-size:11px;opacity:.7">Sources : <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a> · <a href="https://www.facturation.gouv.fr" target="_blank" rel="noopener">facturation.gouv.fr</a> · <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">EUR-Lex</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.insee.fr" target="_blank" rel="noopener">INSEE</a> · <a href="https://ec.europa.eu/taxation_customs/vies/" target="_blank" rel="noopener">VIES</a></span>
+  <p style="margin:4px 0 0;font-size:12px;opacity:.8">© 2026 Jeremy : Data Analyst · Automatisation &amp; IA · <a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</div></footer>
+
+<script>
+var N8N = 'https://quantitative-infinite-rand-collecting.trycloudflare.com';
+function runDemo(kind){
+  var payload = {}, url = N8N + '/webhook/demo-' + kind, out = document.getElementById('out-' + kind);
+  if (kind === 'devis') { payload = { client: v('dev-client'), prestation: v('dev-prest'), details: v('dev-details'), zone: 'Rouen', verticale: v('dev-vert') }; }
+  if (kind === 'relance') { payload = { client: v('rel-client'), montant: v('rel-montant'), jours: v('rel-jours') }; }
+  if (kind === 'avis') { payload = { client: v('avi-client'), note: v('avi-note'), texte: v('avi-texte') }; }
+  if (kind === 'cr') { payload = { source: v('cr-source'), notes: v('cr-notes') }; }
+  if (kind === 'vocal') { payload = { question: v('voc-question') }; }
+  if (kind === 'tri') { payload = { expediteur: v('tri-exp'), sujet: v('tri-sujet'), corps: v('tri-corps') }; }
+  if (kind === 'rdv') { payload = { client: v('rdv-client'), date_rdv: v('rdv-date'), heure: v('rdv-heure'), prestation: v('rdv-prest') }; }
+  if (kind === 'faq') { payload = { question: v('faq-question') }; }
+  if (kind === 'creneaux') { payload = { client: v('cre-client'), prestation: v('cre-prest'), preferences: v('cre-prefs') }; }
+  if (kind === 'stock') { payload = { produit: v('stk-produit'), niveau: v('stk-niveau'), seuil: v('stk-seuil'), fournisseur: v('stk-four') }; }
+  if (kind === 'rapprochement') { payload = { libelle: v('rap-lib'), montant: v('rap-montant'), facture_attendue: v('rap-fact') }; }
+  if (kind === 'reporting') { payload = { periode: v('rep-periode'), ca_total: v('rep-ca'), nb_factures: v('rep-nb'), contexte: v('rep-contexte') }; }
+  if (kind === 'statut') { payload = { client: v('st-client'), prestation: v('st-prest'), etape: v('st-etape') }; }
+  if (kind === 'retour') { payload = { client: v('ret-client'), prestation: v('ret-prest'), echeance: v('ret-echeance') }; }
+  if (kind === 'relance-devis') { payload = { client: v('rd-client'), prestation: v('rd-prest'), montant: v('rd-montant'), jours: v('rd-jours') }; }
+  if (kind === 'briefing' || kind === 'veille' || kind === 'support' || kind === 'notes-frais' || kind === 'idees' || kind === 'seo') { url = N8N + '/webhook/test-' + kind; payload = { test: true }; }
+  if (kind === 'facture-elec') { url = N8N + '/webhook/test-facture-elec'; payload = { test: true }; }
+  if (kind === 'base-clients') { url = N8N + '/webhook/test-base-clients'; payload = { test: true }; }
+  if (kind === 'reconductions') { url = N8N + '/webhook/test-reconductions'; payload = { test: true }; }
+  if (kind === 'verif-factures') { url = N8N + '/webhook/test-verif-factures'; payload = { test: true }; }
+  if (kind === 'factures-intl') { url = N8N + '/webhook/test-factures-intl'; payload = { test: true }; }
+  if (kind === 'statuts-transmission') { url = N8N + '/webhook/test-statuts-transmission'; payload = { test: true }; }
+  if (kind === 'transparence-ia') { url = N8N + '/webhook/test-transparence-ia'; payload = { test: true }; }
+  if (kind === 'fiches-appels') { url = N8N + '/webhook/test-fiches-appels'; payload = { test: true }; }
+  if (kind === 'dedoublonnage') { url = N8N + '/webhook/test-dedoublonnage'; payload = { test: true }; }
+  if (kind === 'clients-inactifs') { url = N8N + '/webhook/test-clients-inactifs'; payload = { test: true }; }
+  if (kind === 'doc-relation') { url = N8N + '/webhook/test-doc-relation'; payload = { test: true }; }
+  if (kind === 'chef-cabinet') { url = N8N + '/webhook/test-chef-cabinet'; payload = { test: true }; }
+  if (kind === 'qa-campagnes') { url = N8N + '/webhook/test-qa-campagnes'; payload = { test: true }; }
+  if (kind === 'remboursements') { url = N8N + '/webhook/test-remboursements'; payload = { test: true }; }
+  if (kind === 'clusters-retours') { url = N8N + '/webhook/test-clusters'; payload = { test: true }; }
+  if (kind === 'depenses-fournisseurs') { url = N8N + '/webhook/test-depenses'; payload = { test: true }; }
+  if (kind === 'risque-escalade') { url = N8N + '/webhook/test-risque-escalade'; payload = { test: true }; }
+  if (kind === 'dup-tickets') { url = N8N + '/webhook/test-dup-tickets'; payload = { test: true }; }
+  if (kind === 'ordonnancier') { url = N8N + '/webhook/test-ordonnancier'; payload = { test: true }; }
+  if (kind === 'cloture') { url = N8N + '/webhook/test-cloture'; payload = { test: true }; }
+  if (kind === 'preselection') { url = N8N + '/webhook/test-preselection'; payload = { test: true }; }
+  out.className = 'demo-out visible loading';
+  out.textContent = '⏳ Génération en cours… (5-15 secondes)';
+  fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    .then(function(r){ return r.json(); })
+    .then(function(d){ out.className = 'demo-out visible'; out.textContent = fmt(d); })
+    .catch(function(e){ out.className = 'demo-out visible error'; out.textContent = 'Erreur : ' + e.message + ' : réessayez dans un instant.'; });
+}
+function v(id){ return document.getElementById(id).value.trim(); }
+var filtreActif = new URLSearchParams(window.location.search).get('f') || 'tous';
+if (!['tous','encaisser','servir','vendre','produire','savoir','conformite','sante'].includes(filtreActif)) filtreActif = 'tous';
+document.addEventListener('DOMContentLoaded', function(){ if (filtreActif !== 'tous') setFiltre(filtreActif); });
+function setFiltre(f){ filtreActif = f; document.querySelectorAll('.fbtn').forEach(function(b){ b.classList.toggle('on', b.dataset.f === f); }); filtreLabo(); }
+function filtreLabo(){
+  var q = (document.getElementById('labo-search').value || '').toLowerCase();
+  document.querySelectorAll('.demo-card').forEach(function(c){
+    var okB = filtreActif === 'tous' || (c.dataset.besoin || '') === filtreActif;
+    var okQ = !q || (c.textContent.toLowerCase().indexOf(q) !== -1);
+    c.classList.toggle('hide', !(okB && okQ));
+  });
+}
+function fmt(d){
+  if (d && d.resultat) return d.resultat;
+  if (!d) return 'Pas de résultat';
+  if (d.titre && d.points) return '📌 ' + d.titre + '\n\n' + d.points.map(function(p){ return '• ' + p; }).join('\n') + (d.priorite ? '\n\n🎯 Priorité : ' + d.priorite : '');
+  if (d.signaux) return '📡 Signaux :\n' + d.signaux.map(function(s){ return '• ' + s; }).join('\n') + (d.menace ? '\n⚠️ Menace : ' + d.menace : '') + (d.opportunite ? '\n💡 Opportunité : ' + d.opportunite : '');
+  if (d.reponses) return d.reponses.map(function(r){ return '🎫 ' + r.ticket + ' : ' + (r.categorie||'') + '\n' + (r.brouillon||'') + (r.validation_humaine ? '\n👤 À valider par un humain' : ''); }).join('\n\n');
+  if (d.fournisseur) return '🧾 ' + d.fournisseur + ' : ' + (d.date||'') + '\nMontant : ' + d.montant + ' € · Catégorie : ' + d.categorie;
+  if (d.idees) return d.idees.map(function(i){ return '💡 [' + i.type + '] ' + i.titre + '\n   Hook : ' + (i.hook||'') + '\n   Angle : ' + (i.angle||''); }).join('\n\n');
+  if (d.campagnes) return '📣 QA campagnes\n\n' + d.campagnes.map(function(c){ return (c.conforme==='oui'?'✅ ':'⚠️ ') + c.canal + ' — ' + (c.conforme==='oui'?'conforme':'à corriger') + ((c.corrections&&c.corrections.length)?'\n• ' + c.corrections.join('\n• '):''); }).join('\n\n');
+  
+  if (d.demandes) return '🔁 Remboursements\n\n' + d.demandes.map(function(x){ return (x.statut==='eligible'?'✅ ':(x.statut==='refuse'?'⛔ ':'🟡 ')) + x.client + ' — ' + x.statut + '\n✍️ ' + (x.brouillon||''); }).join('\n\n');
+  
+  if (d.themes) return '💬 Retours clients\n\n' + d.themes.map(function(t){ return '• ' + t.theme + ' (' + t.nb + ' retours)\n  « ' + (t.extrait||'') + ' »'; }).join('\n\n') + '\n\nActions :\n' + (d.actions||[]).map(function(a){ return '✅ ' + a; }).join('\n');
+  
+  if (d.fournisseurs) return '📊 Dépenses fournisseurs\n\n' + d.fournisseurs.map(function(f){ return (f.statut==='hausse_alerte'?'🔴 ':(f.statut==='hausse_suivi'?'🟠 ':'⚪ ')) + f.fournisseur + ' — ' + f.statut + ' (' + f.ecart + ')' + ((f.questions&&f.questions.length)?'\n❓ ' + f.questions.join('\n❓ '):'') + ((f.piste)?'\n💡 ' + f.piste:''); }).join('\n\n') + '\n\n' + (d.bilan||'');
+  
+  if (d.messages) return '🛡️ Paratonnerre\n\n' + d.messages.map(function(m){ return (m.statut==='risque_eleve'?'🔴 ':(m.statut==='a_surveiller'?'🟠 ':'⚪ ')) + m.client + ' — ' + m.statut + ((m.brouillon)?'\n✍️ ' + m.brouillon:'') + ((m.action)?'\n🎯 ' + m.action:''); }).join('\n\n');
+  
+  if (d.fusions) return '🎫 Tickets en double\n\n' + d.rapport + '\n\nFusions :\n' + (d.fusions||[]).map(function(f){ return '• ' + f.garde + ' ← ' + (f.fusionne||[]).join(', ') + '\n  ' + f.action; }).join('\n');
+  
+  if (d.journee) return '🤵 Chef de cabinet IA\n\n📅 Journée : ' + (d.journee||'') + '\n\n📧 Emails :\n' + (d.emails||[]).map(function(e){ return (e.priorite==='urgent'?'🔴 ':'⚪ ') + e.objet + '\n   ' + (e.resume||'') + ((e.action)?'\n   ✅ ' + e.action:'') ; }).join('\n') + '\n\n⏰ Échéances :\n' + (d.echeances||[]).map(function(x){ return '• ' + x; }).join('\n') + '\n\n🎯 ' + (d.bilan||'');
+  if (d.documents) return '📋 Document d\'entrée en relation\n\n' + d.documents.map(function(d){ return '📄 ' + d.client + '\n' + d.objet + '\n' + d.corps; }).join('\n\n');
+  
+  if (d.ordonnances) return '💊 Ordonnancier\n\n' + d.ordonnances.map(function(o){ return (o.statut==='complete'?'✅ ':'⚠️ ') + o.patient + ' : ' + o.statut + '\n' + (o.points||[]).map(function(p){ return '• ' + p; }).join('\n'); }).join('\n\n');
+  
+  if (d.relances) return '💛 Clients perdus de vue\n\n' + d.relances.filter(function(r){ return r.message; }).map(function(r){ return (r.statut==='inactif_180'?'🔴 ':'🟡 ') + r.client + ' : ' + r.statut + '\n' + r.message; }).join('\n\n') + ((d.relances||[]).some(function(r){ return !r.message; }) ? '\n\n(les clients actifs ne sont pas relancés)' : '');
+  
+  if (d.bilan && d.anomalies) return '📊 Clôture mensuelle\n\n' + d.bilan + '\n\nAnomalies :\n' + (d.anomalies||[]).map(function(a){ return '• ' + a; }).join('\n') + '\n\n🎯 ' + (d.action||'');
+  
+  if (d.candidats) return '👥 Présélection candidatures\n\n' + d.candidats.map(function(c){ return (c.statut==='a_rencontrer'?'✅ ':'➖ ') + c.nom + ' : ' + c.statut + '\n' + (c.synthese||'') + ((c.questions&&c.questions.length)?'\n❓ ' + c.questions.join('\n❓ '):''); }).join('\n\n');
+  
+  if (d.fusions) return '🗃️ Base sans doublons\n\n' + d.rapport + '\n\nFusions :\n' + (d.fusions||[]).map(function(f){ return '• ' + f.maitre + ' ← ' + (f.doublons||[]).join(', ') + '\n  ' + f.action; }).join('\n');
+  if (d.client && d.pain) return '📇 Fiche client après appel\n\n' + d.client + ' : ' + (d.entreprise||'') + '\nBesoin : ' + (d.besoin||'') + '\nPain : ' + d.pain + '\nBudget : ' + (d.budget||'') + '\nProchaine étape : ' + (d.prochaine_etape||'') + '\nRelance : ' + (d.relance||'') + '\nHook : ' + (d.hook||'');
+  if (d.usages) return '🤖 Transparence IA (IA Act)\n\n' + d.usages.map(function(u){ return '🔎 ' + u.usage + ' : ' + u.niveau + '\n' + u.actions + (u.mention ? '\n💬 Mention : ' + u.mention : ''); }).join('\n\n') + '\n\n📋 ' + (d.bilan||'');
+  if (d.relances) return '📨 Suivi des transmissions\n\n' + d.rapport + '\n\nRelances :\n' + (d.relances||[]).map(function(r){ return '📌 ' + r.client + ' : ' + r.objet + '\n' + r.corps; }).join('\n\n');
+  if (d.factures) return '🌍 Factures internationales\n\n' + d.factures.map(function(f){ return '📄 ' + f.numero + '\n' + f.objet + '\n' + f.mentions + '\n⚠️ ' + (f.vigilance||''); }).join('\n\n');
+  if (d.statut && d.corrections) return '✅ Vérificateur de factures\nStatut : ' + d.statut + '\n\n' + d.bilan + '\n\nCorrections :\n' + (d.corrections||[]).map(function(c){ return '• ' + c; }).join('\n');
+  if (d.lettres) return '📄 Lettres de résiliation (recommandé AR) :\n\n' + (d.lettres||[]).map(function(l){ return '📌 ' + l.client + '\n' + l.objet + '\n' + l.corps; }).join('\n\n') + ((d.rappels&&d.rappels.length) ? '\n\n⏰ Rappels :\n' + d.rappels.map(function(r){ return '• ' + r.client + ' : ' + r.texte; }).join('\n') : '');
+  if (d.statut && d.bilan) return "🗂️ Base clients prête pour l'élec\nStatut : " + d.statut + "\n\n" + d.bilan + "\n\nActions :\n" + (d.actions||[]).map(function(a){ return '• ' + a; }).join("\n") + "\n\n📧 Message clients :\n" + (d.message_clients||'');
+  if (d.niveau && d.bilan) return '🧾 Bilan facturation électronique\nNiveau : ' + d.niveau + '\n\n' + d.bilan + '\n\nActions :\n' + (d.actions||[]).map(function(a){ return '• ' + a; }).join('\n') + '\n\n📅 ' + (d.calendrier||'');
+  if (d.titre && d.h2) return '📰 ' + d.titre + '\n\n' + d.h2.map(function(x){ return '## ' + x; }).join('\n') + '\n\n' + (d.cta ? '👉 ' + d.cta : '');
+  try { return JSON.stringify(d, null, 2).slice(0, 800); } catch(e){ return String(d); }
+}
+</script>
+<a href="https://wa.me/33600000000?text=Bonjour%2C%20je%20voudrais%20mes%2015%20minutes%20offertes" class="wa-float" aria-label="Me contacter sur WhatsApp">💬</a>
+<style>.wa-float{position:fixed;right:16px;bottom:16px;background:#1e7a4f;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:999;text-decoration:none}@media(min-width:900px){.wa-float{display:none}}</style>
+<script>/* nav-close-js */document.addEventListener("click",function(e){var open=document.querySelectorAll("details[open]");open.forEach(function(d){if(!d.contains(e.target)&&(d.classList.contains("nav-mobile")||d.classList.contains("nav-drop"))){d.removeAttribute("open");}});});</script>
+<script src="besoin-widget.js"></script>
+</body>
+</html>

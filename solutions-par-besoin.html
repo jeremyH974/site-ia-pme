@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatisation par besoin : encaisser, vendre, servir, produire, savoir, se conformer</title>
+<meta name="description" content="Trouvez l'automatisation selon VOTRE besoin : encaisser plus vite, remplir l'agenda, fidéliser, produire sans erreur, décider mieux, être en règle. Les démos sont testables en direct.">
+<link rel="stylesheet" href="style.css?v=38">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://jeremyh974.github.io/site-ia-pme/solutions-par-besoin.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://jeremyh974.github.io/site-ia-pme/solutions-par-besoin.html">
+<meta property="og:title" content="Automatisation par besoin : encaisser, vendre, servir, produire, savoir, se conformer">
+<meta property="og:description" content="Trouvez l'automatisation selon VOTRE besoin : encaisser plus vite, remplir l'agenda, fidéliser, produire sans erreur, décider mieux, être en règle. Les démos sont testables en direct.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService",
+"name":"Jeremy : Consultant IA & Automatisation pour PME",
+"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
+"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
+"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+</script>
+<script>/* theme-init */
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(e){}}</script>
+</head>
+<body>
+<header class="site-header nav-v4"><!-- nav-v4 -->
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Jeremy<span>, Data Analyst · Automatisation &amp; IA</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="solutions-par-besoin.html">Solutions</a>
+      <a href="guides.html">Guides</a>
+      <a href="demos.html">Démos</a>
+      <a href="labo-demo.html">Labo</a>
+      
+      
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+      <a class="btn btn-primary nav-cta" href="contact.html">15 min offertes</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary>☰ Menu</summary>
+      <nav aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="detecteur-taches.html">🎯 Trouver mes tâches</a>
+        <a href="automatiser-devis.html">Devis &amp; factures</a>
+        <a href="relance-impayes.html">Relances &amp; impayés</a>
+        <a href="service-client.html">Service client &amp; avis</a>
+        <a href="compte-rendu-reunion.html">Comptes-rendus &amp; RDV</a>
+        <a href="index.html#solutions">Toutes les solutions →</a>
+        <a href="guides.html">Guides gratuits</a>
+        <a href="demos.html">Démos</a>
+        <a href="labo-demo.html">Labo</a>
+        
+        
+        <button class="theme-toggle theme-toggle-mobile" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+<a class="btn btn-primary" href="contact.html">15 min offertes</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main class="wrap">
+  <div style="padding:22px 0 10px;text-align:center">
+    <h1 style="font-size:clamp(26px,4.5vw,40px);line-height:1.15;margin:0 0 8px">Par quoi voulez-vous <em>commencer</em> ?</h1>
+    <p style="font-size:16px;opacity:.9;max-width:640px;margin:0 auto">Choisissez un objectif, testez la démo en 30 secondes. Pas de jargon, pas d'engagement.</p>
+  </div>
+
+  <div class="labo-filtres">
+    <input id="sol-search" type="search" placeholder="🔍 Rechercher… (facture, devis, RDV, santé, relance…)" oninput="filtreSol()" style="width:100%;padding:10px 12px;border-radius:8px;font-size:14px">
+    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
+      <button class="fbtn on" data-f="tous" onclick="filtreType(this,'tous')">Tous</button>
+      <button class="fbtn" data-f="argent" onclick="filtreType(this,'argent')">💰 Gagner de l'argent</button>
+      <button class="fbtn" data-f="temps" onclick="filtreType(this,'temps')">⏱️ Gagner du temps</button>
+      <button class="fbtn" data-f="conformite" onclick="filtreType(this,'conformite')">📋 Être en règle</button>
+      <button class="fbtn" data-f="sante" onclick="filtreType(this,'sante')">💊 Santé</button>
+    </div>
+  </div>
+  <style>[data-theme="dark"] .labo-filtres{background:#16231c;border-color:#2a5a41}[data-theme="dark"] .labo-filtres input{background:#1c221f;border-color:#2a332e;color:#e8ece8}.fbtn{border:1px solid var(--border,#e5e7eb);border-radius:999px;padding:7px 13px;font-size:13px;cursor:pointer;background:var(--bg,#fff);color:inherit}.fbtn.on{background:var(--accent,#3fae78);color:#fff;border-color:var(--accent,#3fae78)}.demo-card{transition:opacity .15s}.demo-card.hide{display:none}</style>
+  <script>
+  function filtreSol(){var q=(document.getElementById('sol-search').value||'').toLowerCase();document.querySelectorAll('#sol-grid .demo-card').forEach(function(c){c.classList.toggle('hide',!!q&&c.textContent.toLowerCase().indexOf(q)===-1)});}
+  function filtreType(btn,t){document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('on')});btn.classList.add('on');document.querySelectorAll('#sol-grid .demo-card').forEach(function(c){c.classList.toggle('hide',t!=='tous'&&c.getAttribute('data-t')!==t)});}
+  </script>
+
+  <div id="sol-grid" class="hub-grid">
+    <div class="demo-card" style="margin:0" data-t="argent">
+      <h3>💰 Encaisser plus vite</h3>
+      <div class="demo-desc">Relances d'impayés en 3 paliers, rapprochement bancaire, facturation électronique.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> ~5 h/semaine récupérées ≈ 9 200 €/an. Plus un seul impayé oublié.</p>
+      <a class="btn btn-ghost" href="labo-demo.html?f=encaisser">🧪 Tester (5 démos) →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="argent">
+      <h3>📈 Vendre mieux</h3>
+      <div class="demo-desc">Devis 24/7, relance à J+7/J+14/J+21, clients perdus de vue relancés.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> ~3 h/semaine + des devis qui ne restent plus sans réponse.</p>
+      <a class="btn btn-ghost" href="labo-demo.html?f=vendre">🧪 Tester (4 démos) →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="temps">
+      <h3>🤝 Servir vos clients</h3>
+      <div class="demo-desc">RDV rappelés J-1, avis répondus, support tickets classés, clients inactifs relancés.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> moins de no-show, des avis 5 étoiles, des clients qui reviennent.</p>
+      <a class="btn btn-ghost" href="labo-demo.html?f=servir">🧪 Tester (7 démos) →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="temps">
+      <h3>🏭 Produire et livrer</h3>
+      <div class="demo-desc">Stock alerté avant la rupture, compte-rendu de chantier prêt en 2 minutes.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> zéro rupture, zéro compte-rendu oublié.</p>
+      <a class="btn btn-ghost" href="automatisations.html">🧪 Voir les démos →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="temps">
+      <h3>🧠 Décider avec des faits</h3>
+      <div class="demo-desc">Briefing chaque matin, reporting auto, veille concurrentielle, clôture consolidée.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> la bonne décision au bon moment, sans ouvrir 5 tableurs.</p>
+      <a class="btn btn-ghost" href="labo-demo.html?f=savoir">🧪 Tester (5 démos) →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="conformite">
+      <h3>📋 Être en règle</h3>
+      <div class="demo-desc">Facturation électronique (réception 09/2026, émission 09/2027), IA Act, transparence IA.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> l'obligation qui arrive se transforme en chantier clair et chiffré.</p>
+      <a class="btn btn-ghost" href="labo-demo.html?f=conformite">🧪 Tester (6 démos) →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="sante">
+      <h3>💊 Santé et professions réglementées</h3>
+      <div class="demo-desc">Ordonnancier vérifié, document d'entrée en relation, rappels patients.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> la conformité calculée, le temps rendu au soin.</p>
+      <a class="btn btn-ghost" href="offre-cabinet-en-regle.html">🏥 Voir l'offre →</a>
+    </div>
+    <div class="demo-card" style="margin:0" data-t="temps">
+      <h3>👥 Recruter sans noyer</h3>
+      <div class="demo-desc">CV pré-triés sur critères objectifs, questions d'entretien prêtes. La décision reste humaine.</div>
+      <p style="margin:8px 0;font-size:14px"><strong>ROI :</strong> 30 min par candidature au lieu de 2 h.</p>
+      <a class="btn btn-ghost" href="labo-demo.html?f=savoir">🧪 Tester →</a>
+    </div>
+  </div>
+
+  <div class="aio-box" style="margin:24px 0">
+    <h3 style="margin:0 0 6px">🤔 Je ne sais pas par où commencer ?</h3>
+    <p style="margin:0 0 10px">Répondez à 5 questions simples : on détecte vos tâches répétitives et on vous propose les automatisations qui rapportent.</p>
+    <a class="btn btn-primary" href="detecteur-taches.html">🎯 Trouver MES tâches à automatiser</a>
+  </div>
+
+  <div style="text-align:center;margin:28px 0 12px">
+    <h2 style="margin:0 0 8px">15 minutes pour savoir si c'est pour vous.</h2>
+    <p style="opacity:.9;margin:0 0 14px">On regarde vos 3 tâches les plus répétitives, on chiffre le temps gagné. Gratuit, sans engagement.</p>
+    <a class="btn btn-primary" href="contact.html" style="font-size:17px;padding:13px 26px">📞 Réserver mon appel de 15 min</a>
+  </div>
+</main>
+<footer class="footer-condensed footer-v2"><div class="wrap footer-grid">
+  <div class="footer-brand">
+    <p class="footer-logo">Jeremy, Data Analyst · Automatisation &amp; IA</p>
+    <p class="footer-tagline">Des automatisations testables en direct, sourcées, sans jargon.</p>
+    <a class="btn btn-primary" href="contact.html">📞 15 min offertes</a>
+  </div>
+  <nav class="footer-col" aria-label="Explorer">
+    <p class="footer-title">Explorer</p>
+    <a href="index.html">Accueil</a>
+    <a href="solutions-par-besoin.html">Solutions par besoin</a>
+    <a href="automatisations.html">Les 35 automatisations</a>
+    <a href="labo-demo.html">Labo (démos en direct)</a>
+  </nav>
+  <nav class="footer-col" aria-label="Ressources">
+    <p class="footer-title">Ressources</p>
+    <a href="guides.html">Guides</a>
+    <a href="formation-n8n.html">Formation n8n</a>
+    <a href="no-code-cest-quoi.html">No-code</a>
+    <a href="freelance-automatisation-n8n.html">Freelance n8n</a>
+    <a href="consultant-ia-pme.html">Consultant IA PME</a>
+    <a href="engagements-fiabilite.html">🛡️ Fiabilité</a>
+    <a href="l-ia-peut-elle-se-tromper.html">🤔 L'IA se trompe-t-elle ?</a>
+    <a href="a-propos.html">À propos</a>
+  </nav>
+  <nav class="footer-col" aria-label="Métiers">
+    <p class="footer-title">Métiers</p>
+    <a href="hub-artisans-btp.html">Artisans &amp; BTP</a>
+    <a href="hub-sante-bien-etre.html">Santé</a>
+    <a href="hub-tourisme-accueil.html">Tourisme</a>
+    <a href="hub-commerce-services.html">Commerce</a>
+    <a href="hub-transport-logistique.html">Transport</a>
+    <a href="hub-b2b-pro.html">B2B &amp; pro</a>
+  </nav>
+</div>
+<div class="wrap footer-bottom">
+  <span class="data-sources" style="font-size:11px;opacity:.7">Sources : <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a> · <a href="https://www.facturation.gouv.fr" target="_blank" rel="noopener">facturation.gouv.fr</a> · <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">EUR-Lex</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.insee.fr" target="_blank" rel="noopener">INSEE</a> · <a href="https://ec.europa.eu/taxation_customs/vies/" target="_blank" rel="noopener">VIES</a></span>
+  <p style="margin:4px 0 0;font-size:12px;opacity:.8">© 2026 Jeremy : Data Analyst · Automatisation &amp; IA · <a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</div></footer>
+<a href="https://wa.me/33600000000?text=Bonjour%2C%20je%20voudrais%20mes%2015%20minutes%20offertes" class="wa-float" aria-label="Me contacter sur WhatsApp">💬</a>
+<style>.wa-float{position:fixed;right:16px;bottom:16px;background:#1e7a4f;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:999;text-decoration:none}@media(min-width:900px){.wa-float{display:none}}</style>
+<script>/* nav-close-js */document.addEventListener("click",function(e){var open=document.querySelectorAll("details[open]");open.forEach(function(d){if(!d.contains(e.target)&&(d.classList.contains("nav-mobile")||d.classList.contains("nav-drop"))){d.removeAttribute("open");}});});</script>
+<script src="besoin-widget.js"></script>
+</body>
+</html>

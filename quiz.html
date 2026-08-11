@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test de maturité automatisation : 2 minutes pour savoir</title>
+<meta name="description" content="5 questions simples pour savoir si votre entreprise perd du temps sur des tâches automatisables. Réponse immédiate et conseil personnalisé.">
+<link rel="stylesheet" href="style.css?v=38">
+<style>
+.quiz-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);margin-top:28px;max-width:640px}
+.q{display:none}
+.q.active{display:block}
+.q .num{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--accent)}
+.q h3{font-size:19px;margin:8px 0 18px}
+.opt{display:block;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;font-size:15px;cursor:pointer;font-family:var(--font-body)}
+.opt:hover{border-color:var(--accent);background:var(--paper-2)}
+.opt.selected{border-color:var(--accent);background:#e3efe8}
+.quiz-result{display:none;text-align:center;padding:16px 0}
+.quiz-result .score{font-family:var(--font-display);font-size:64px;font-weight:700;color:var(--accent);line-height:1}
+.quiz-result .lvl{font-size:20px;font-weight:700;margin:10px 0 6px}
+.quiz-result p{color:var(--ink-soft);max-width:30em;margin:0 auto 18px}
+</style>
+<link rel="canonical" href="https://jeremyh974.github.io/site-ia-pme/quiz.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://jeremyh974.github.io/site-ia-pme/quiz.html">
+<meta property="og:title" content="Test de maturité automatisation : 2 minutes pour savoir">
+<meta property="og:description" content="5 questions simples pour savoir si votre entreprise perd du temps sur des tâches automatisables. Réponse immédiate et conseil personnalisé.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService",
+"name":"Jeremy : Consultant IA & Automatisation pour PME",
+"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
+"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
+"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+</script>
+<script>/* theme-init */
+(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(e){}}</script>
+</head>
+<body>
+
+<header class="site-header nav-v4"><!-- nav-v4 -->
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Jeremy<span>, Data Analyst · Automatisation &amp; IA</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="solutions-par-besoin.html">Solutions</a>
+      <a href="guides.html">Guides</a>
+      <a href="demos.html">Démos</a>
+      <a href="labo-demo.html">Labo</a>
+      
+      
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+      <a class="btn btn-primary nav-cta" href="contact.html">15 min offertes</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary>☰ Menu</summary>
+      <nav aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="detecteur-taches.html">🎯 Trouver mes tâches</a>
+        <a href="automatiser-devis.html">Devis &amp; factures</a>
+        <a href="relance-impayes.html">Relances &amp; impayés</a>
+        <a href="service-client.html">Service client &amp; avis</a>
+        <a href="compte-rendu-reunion.html">Comptes-rendus &amp; RDV</a>
+        <a href="index.html#solutions">Toutes les solutions →</a>
+        <a href="guides.html">Guides gratuits</a>
+        <a href="demos.html">Démos</a>
+        <a href="labo-demo.html">Labo</a>
+        
+        
+        <button class="theme-toggle theme-toggle-mobile" onclick="toggleTheme()" aria-label="Changer de thème sombre/clair"><span class="tt-moon">🌙</span><span class="tt-sun">☀️</span></button>
+<a class="btn btn-primary" href="contact.html">15 min offertes</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › Votre entreprise perd-elle du temps automatisable ?</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">2 minutes · 5 questions · Sans jargon</span>
+    <h1>Votre entreprise perd-elle du temps <em>automatisable ?</em></h1>
+    <p class="sub">Répondez simplement à 5 questions sur votre quotidien. Vous obtenez tout de suite une évaluation honnête, et une idée de ce qu'on peut améliorer.</p>
+  </div>
+</section>
+<div class="aio-box"><strong>En résumé :</strong> Répondez simplement à 5 questions sur votre quotidien. Vous obtenez tout de suite une évaluation honnête, et une idée de ce qu'on peut améliorer.</div>
+<style>.aio-box{background:#f4faf6;border:1px solid #cfe8d8;border-left:4px solid #1e7a4f;border-radius:8px;padding:14px 18px;margin:22px auto;max-width:1100px;font-size:16px;line-height:1.55;color:#222;box-shadow:0 1px 3px rgba(0,0,0,.05)}.aio-box strong{color:#1e7a4f}</style>
+
+<section>
+  <div class="wrap">
+    <div class="quiz-card" id="quiz">
+      <div class="q active" data-q="0">
+        <div class="num">Question 1 / 5</div>
+        <h3>Combien d'heures par semaine passez-vous sur des tâches répétitives (saisie, copier-coller, tri d'emails) ?</h3>
+        <button class="opt" data-score="1">Moins d'une heure : ça va</button>
+        <button class="opt" data-score="2">Entre 2 et 5 heures : ça commence à peser</button>
+        <button class="opt" data-score="3">Plus de 5 heures : c'est beaucoup trop</button>
+      </div>
+      <div class="q" data-q="1">
+        <div class="num">Question 2 / 5</div>
+        <h3>Vos factures et vos relances, ça se passe comment ?</h3>
+        <button class="opt" data-score="3">Tout à la main : je saisis, je relance de mémoire</button>
+        <button class="opt" data-score="2">J'utilise un logiciel de facturation, mais le reste est manuel</button>
+        <button class="opt" data-score="1">C'est déjà bien organisé, presque automatique</button>
+      </div>
+      <div class="q" data-q="2">
+        <div class="num">Question 3 / 5</div>
+        <h3>Quand un client demande un devis le soir, vous répondez…</h3>
+        <button class="opt" data-score="3">Le lendemain, ou plus tard si je suis débordé</button>
+        <button class="opt" data-score="2">Dans la journée : je fais au mieux</button>
+        <button class="opt" data-score="1">Rapidement, même le soir : c'est ma priorité</button>
+      </div>
+      <div class="q" data-q="3">
+        <div class="num">Question 4 / 5</div>
+        <h3>Votre reporting / suivi d'activité, vous le faites…</h3>
+        <button class="opt" data-score="3">À la main, chaque semaine, avec un tableau que je construis moi-même</button>
+        <button class="opt" data-score="2">Avec des formules et des tableaux que j'ai mis en place</button>
+        <button class="opt" data-score="1">Ça se fait (presque) tout seul, je consulte le résultat</button>
+      </div>
+      <div class="q" data-q="4">
+        <div class="num">Question 5 / 5</div>
+        <h3>L'IA dans votre entreprise, aujourd'hui :</h3>
+        <button class="opt" data-score="3">On ne l'utilise pas, je ne sais pas par où commencer</button>
+        <button class="opt" data-score="2">On l'utilise de temps en temps (ChatGPT pour écrire, etc.)</button>
+        <button class="opt" data-score="1">On l'utilise au quotidien, dans nos outils</button>
+      </div>
+      <div class="quiz-result" id="result">
+        <div class="score" id="scoreVal">0</div>
+        <div class="lvl" id="lvl">—</div>
+        <p id="lvlText"></p>
+        <div style="background:var(--paper-2);border-radius:12px;padding:16px;margin:0 0 18px;max-width:420px;margin-left:auto;margin-right:auto">
+          <label style="font-weight:600;font-size:14px;display:block;margin-bottom:6px">📩 Recevez votre évaluation + le Pack PME (plan d'action gratuit)</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input type="email" id="quizEmail" placeholder="votre@email.fr" style="flex:1;min-width:180px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px">
+            <button class="btn btn-primary" id="quizSend" style="padding:10px 16px">Recevoir</button>
+          </div>
+          <p id="quizMsg" style="font-size:13px;color:var(--ink-soft);margin-top:8px"></p>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Voir ce qu'on peut automatiser chez moi</a>
+        <p style="margin-top:12px;font-size:14px">Ou <a href="detecteur-taches.html">trouver mes tâches à automatiser (2 min)</a> · <a href="guide-du-pain-automatise.html">télécharger le guide gratuit</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-condensed footer-v2"><div class="wrap footer-grid">
+  <div class="footer-brand">
+    <p class="footer-logo">Jeremy, Data Analyst · Automatisation &amp; IA</p>
+    <p class="footer-tagline">Des automatisations testables en direct, sourcées, sans jargon.</p>
+    <a class="btn btn-primary" href="contact.html">📞 15 min offertes</a>
+  </div>
+  <nav class="footer-col" aria-label="Explorer">
+    <p class="footer-title">Explorer</p>
+    <a href="index.html">Accueil</a>
+    <a href="solutions-par-besoin.html">Solutions par besoin</a>
+    <a href="automatisations.html">Les 35 automatisations</a>
+    <a href="labo-demo.html">Labo (démos en direct)</a>
+  </nav>
+  <nav class="footer-col" aria-label="Ressources">
+    <p class="footer-title">Ressources</p>
+    <a href="guides.html">Guides</a>
+    <a href="formation-n8n.html">Formation n8n</a>
+    <a href="no-code-cest-quoi.html">No-code</a>
+    <a href="freelance-automatisation-n8n.html">Freelance n8n</a>
+    <a href="consultant-ia-pme.html">Consultant IA PME</a>
+    <a href="engagements-fiabilite.html">🛡️ Fiabilité</a>
+    <a href="l-ia-peut-elle-se-tromper.html">🤔 L'IA se trompe-t-elle ?</a>
+    <a href="a-propos.html">À propos</a>
+  </nav>
+  <nav class="footer-col" aria-label="Métiers">
+    <p class="footer-title">Métiers</p>
+    <a href="hub-artisans-btp.html">Artisans &amp; BTP</a>
+    <a href="hub-sante-bien-etre.html">Santé</a>
+    <a href="hub-tourisme-accueil.html">Tourisme</a>
+    <a href="hub-commerce-services.html">Commerce</a>
+    <a href="hub-transport-logistique.html">Transport</a>
+    <a href="hub-b2b-pro.html">B2B &amp; pro</a>
+  </nav>
+</div>
+<div class="wrap footer-bottom">
+  <span class="data-sources" style="font-size:11px;opacity:.7">Sources : <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a> · <a href="https://www.facturation.gouv.fr" target="_blank" rel="noopener">facturation.gouv.fr</a> · <a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">EUR-Lex</a> · <a href="https://www.service-public.fr" target="_blank" rel="noopener">service-public.fr</a> · <a href="https://www.insee.fr" target="_blank" rel="noopener">INSEE</a> · <a href="https://ec.europa.eu/taxation_customs/vies/" target="_blank" rel="noopener">VIES</a></span>
+  <p style="margin:4px 0 0;font-size:12px;opacity:.8">© 2026 Jeremy : Data Analyst · Automatisation &amp; IA · <a href="confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</div></footer>
+
+<script>
+(function(){
+  var qs = Array.prototype.slice.call(document.querySelectorAll('.q'));
+  var score = 0, current = 0;
+  qs.forEach(function(q){
+    q.querySelectorAll('.opt').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        q.querySelectorAll('.opt').forEach(function(b){ b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        score += parseInt(btn.getAttribute('data-score'), 10);
+        current++;
+        if (current < qs.length) {
+          q.classList.remove('active');
+          qs[current].classList.add('active');
+        } else {
+          showResult();
+        }
+      });
+    });
+  });
+  function showResult(){
+    document.querySelector('.quiz-card').style.display = 'none';
+    var res = document.getElementById('result');
+    res.style.display = 'block';
+    document.getElementById('scoreVal').textContent = score + '/15';
+    var lvl = document.getElementById('lvl'), txt = document.getElementById('lvlText');
+    if (score <= 6) {
+      lvl.textContent = 'Votre organisation est déjà efficace.';
+      txt.textContent = 'Bravo : peu de tâches répétitives vous échappent. Il reste peut-être 1 à 2 automatisations rentables : on peut les repérer en 15 minutes.';
+      window._quizRes = 'Organisation déjà efficace (' + score + '/15).';
+    } else if (score <= 10) {
+      lvl.textContent = 'Des heures se cachent dans votre quotidien.';
+      txt.textContent = 'Vous êtes dans le cas le plus courant : des tâches répétitives prennent 2 à 5 heures par semaine, soit 100 à 250 heures par an. L\'audit gratuit identifie précisément ce qu\'on peut automatiser.';
+      window._quizRes = 'Des heures se cachent (' + score + '/15) : 100 à 250 h/an potentiellement récupérables.';
+    } else {
+      lvl.textContent = 'Vous perdez un temps précieux.';
+      txt.textContent = 'Plus de 5 heures par semaine sur du répétitif, c\'est plus de 250 heures par an : l\'équivalent de 6 semaines de travail. C\'est exactement le terrain de l\'automatisation. Parlons-en.';
+      window._quizRes = 'Temps précieux perdu (' + score + '/15) : +250 h/an.';
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  document.getElementById('quizSend').addEventListener('click', function(){
+    var email = document.getElementById('quizEmail').value.trim();
+    var msg = document.getElementById('quizMsg');
+    if (!email || email.indexOf('@') < 0) { msg.textContent = 'Indiquez votre email pour recevoir le résultat.'; return; }
+    var summary = 'Quiz maturité : ' + (window._quizRes || '') + ' Score détaillé : ' + score + '/15.';
+    fetch('https://quantitative-infinite-rand-collecting.trycloudflare.com/webhook/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nom: 'Visiteur quiz', entreprise: '', email: email, pain: 'Quiz maturité', message: summary })
+    }).then(function(res){ return res.json(); }).then(function(res){
+      if (res.ok) { msg.innerHTML = '<strong style="color:var(--accent)">✅ Évaluation envoyée : vérifiez votre boîte mail.</strong>'; }
+      else { quizMailto(email, summary); }
+    }).catch(function(){ quizMailto(email, summary); });
+  });
+  function quizMailto(email, summary){
+    window.location.href = 'mailto:contact@kaviten.com?subject=' + encodeURIComponent('Résultat quiz maturité') + '&body=' + encodeURIComponent('Bonjour Jeremy, merci de m\'envoyer mon évaluation :\n\n' + summary + '\n\nEmail : ' + email);
+  }
+})();
+</script>
+<a href="https://wa.me/33600000000?text=Bonjour%2C%20je%20voudrais%20mes%2015%20minutes%20offertes" class="wa-float" aria-label="Me contacter sur WhatsApp">💬</a>
+<style>.wa-float{position:fixed;right:16px;bottom:16px;background:#1e7a4f;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:999;text-decoration:none}@media(min-width:900px){.wa-float{display:none}}</style>
+<script>/* nav-close-js */document.addEventListener("click",function(e){var open=document.querySelectorAll("details[open]");open.forEach(function(d){if(!d.contains(e.target)&&(d.classList.contains("nav-mobile")||d.classList.contains("nav-drop"))){d.removeAttribute("open");}});});</script>
+<script src="besoin-widget.js"></script>
+</body>
+</html>
