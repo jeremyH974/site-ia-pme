@@ -30,11 +30,7 @@
 <meta property="og:title" content="Test de maturité automatisation : 2 minutes pour savoir">
 <meta property="og:description" content="5 questions simples pour savoir si votre entreprise perd du temps sur des tâches automatisables. Réponse immédiate et conseil personnalisé.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService",
-"name":"Jeremy : Consultant IA & Automatisation pour PME",
-"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
-"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
-"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Le Lab IA — Consultant IA & Automatisation pour PME", "description": "Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, conformité facturation électronique. Résultats prouvés, livrables testés.", "url": "https://jeremyh974.github.io/site-ia-pme", "sameAs": ["https://jeremyh974.github.io/sarl-optimizer/", "https://jeremyh974.github.io/data-clients-poc/", "https://le-lab-ia.vercel.app", "https://github.com/jeremyH974"], "priceRange": "€€", "areaServed": {"@type": "Place", "name": "France"}, "address": {"@type": "PostalAddress", "addressRegion": "Normandie"}}
 </script>
 <script>/* theme-init */
 (function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
@@ -222,7 +218,7 @@ function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("d
       window._quizRes = 'Organisation déjà efficace (' + score + '/15).';
     } else if (score <= 10) {
       lvl.textContent = 'Des heures se cachent dans votre quotidien.';
-      txt.textContent = 'Vous êtes dans le cas le plus courant : des tâches répétitives prennent 2 à 5 heures par semaine, soit 100 à 250 heures par an. L\'audit gratuit identifie précisément ce qu\'on peut automatiser.';
+      txt.textContent = 'Vous êtes dans le cas le plus courant : des tâches répétitives prennent 2 à 5 heures par semaine, soit 100 à 250 heures par an. L\'échange de 15 min identifie précisément ce qu\'on peut automatiser.';
       window._quizRes = 'Des heures se cachent (' + score + '/15) : 100 à 250 h/an potentiellement récupérables.';
     } else {
       lvl.textContent = 'Vous perdez un temps précieux.';
@@ -247,7 +243,7 @@ function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("d
     }).catch(function(){ quizMailto(email, summary); });
   });
   function quizMailto(email, summary){
-    window.location.href = 'mailto:contact@kaviten.com?subject=' + encodeURIComponent('Résultat quiz maturité') + '&body=' + encodeURIComponent('Bonjour Jeremy, merci de m\'envoyer mon évaluation :\n\n' + summary + '\n\nEmail : ' + email);
+    window.open('https://tally.so/r/EkVxb2','_blank');
   }
 })();
 </script>

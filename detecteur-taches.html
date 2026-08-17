@@ -45,11 +45,7 @@
 <meta property="og:title" content="Trouvez vos tâches à automatiser : détecteur gratuit (2 minutes)">
 <meta property="og:description" content="Cochez ce que vous faites à la main, indiquez votre temps : le détecteur calcule vos tâches les plus rentables à automatiser et ce que ça vaut en euros.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService",
-"name":"Jeremy : Consultant IA & Automatisation pour PME",
-"description":"Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, reporting. Audit gratuit.",
-"url":"https://jeremyh974.github.io/site-ia-pme","email":"contact@kaviten.com","telephone":"+33600000000","priceRange":"€€",
-"areaServed":{"@type":"Place","name":"France"},"address":{"@type":"PostalAddress","addressRegion":"Normandie"}}
+{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Le Lab IA — Consultant IA & Automatisation pour PME", "description": "Automatisation et IA pour PME : devis, factures, relances, rapprochement bancaire, conformité facturation électronique. Résultats prouvés, livrables testés.", "url": "https://jeremyh974.github.io/site-ia-pme", "sameAs": ["https://jeremyh974.github.io/sarl-optimizer/", "https://jeremyh974.github.io/data-clients-poc/", "https://le-lab-ia.vercel.app", "https://github.com/jeremyH974"], "priceRange": "€€", "areaServed": {"@type": "Place", "name": "France"}, "address": {"@type": "PostalAddress", "addressRegion": "Normandie"}}
 </script>
 <script>/* theme-init */
 (function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
@@ -216,7 +212,7 @@ function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("d
       </div>
     </div>
 
-    <p style="margin-top:18px;font-size:14px;color:var(--ink-soft)">Estimations indicatives : l'automatisation rend en moyenne <strong>80 % du temps</strong> d'une tâche répétitive. Le chiffrage précis se fait pendant l'audit gratuit.</p>
+    <p style="margin-top:18px;font-size:14px;color:var(--ink-soft)">Estimations indicatives : l'automatisation rend en moyenne <strong>80 % du temps</strong> d'une tâche répétitive. Le chiffrage précis se fait pendant l'échange de 15 min.</p>
   </div>
 </section>
 
@@ -393,7 +389,7 @@ function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("d
     box.innerHTML = '<div class="big"><span>'+gain.toLocaleString('fr-FR')+'</span> <small>€ / an</small></div>'
       + '<p style="margin-top:6px">≈ <strong>'+saved+' h libérées</strong> chaque semaine · '+Object.keys(selected).length+' tâches automatisables détectées</p>'
       + '<div class="result-list">'+top3+'</div>'
-      + '<div class="result-note">Les liens vous expliquent chaque automatisation simplement. Pour un chiffrage précis avec vos données : l\'audit gratuit.</div>';
+      + '<div class="result-note">Les liens vous expliquent chaque automatisation simplement. Pour un chiffrage précis avec vos données : l\'échange de 15 min.</div>';
     go('result');
   });
 
@@ -413,7 +409,7 @@ function toggleTheme(){var r=document.documentElement;var next=r.getAttribute("d
     }).catch(function(){ mailtoResult(email, summary); });
   });
   function mailtoResult(email, summary){
-    window.location.href = 'mailto:contact@kaviten.com?subject=' + encodeURIComponent('Résultat détecteur') + '&body=' + encodeURIComponent('Bonjour Jeremy, merci de m\'envoyer mon résultat :\n\n' + summary + '\n\nEmail : ' + email);
+    window.open('https://tally.so/r/EkVxb2','_blank');
   }
 
   $('restart').addEventListener('click', function(){
